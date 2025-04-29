@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { FiShoppingCart, FiArrowLeft, FiCheck, FiTruck, FiShield, FiClock } from 'react-icons/fi';
 
@@ -81,6 +82,69 @@ const products = [
       'Высокий ресурс',
     ],
   },
+  {
+    id: 3,
+    name: 'Двигатель ЗМЗ-405 Евро 3',
+    description: 'Качественная реставрация с новыми запчастями',
+    fullDescription: `
+      Двигатель ЗМЗ-405 Евро 3 - это инжекторный двигатель после качественной реставрации с использованием новых запчастей.
+
+      Блок цилиндров восстановлен до заводских характеристик. Все комплектующие заменены на новые: поршни, кольца, цепь ГРМ, прокладки и другие детали.
+
+      Двигатель ничем не уступает новому, но стоит дешевле.
+
+      Работы по восстановлению включают:
+      
+      1. Блок цилиндров:
+         - Оригинальный б/у блок, прошедший опрессовку на герметичность
+         - Расточку под ремонтный размер
+         - Продувку масляных каналов
+      
+      2. ГБЦ (головка блока цилиндров):
+         - Ремонт с заменой новых прокладок (ГБЦ, клапанной крышки, поддона)
+         - Замена сальников (передний, задний)
+         - Притирка клапанов для герметичности
+         - Восстановление резьбовых соединений
+      
+      3. Поршневая группа:
+         - Установка новых ремонтных поршней и колец
+         - Контроль зазоров между поршнями и цилиндрами
+      
+      4. Система ГРМ:
+         - Установка новой цепи ГРМ и комплекта "Идеальная фаза" Евро-3 Киров
+         - Проверка меток ГРМ для синхронизации коленвала и распредвала
+      
+      5. Вспомогательные системы:
+         - Замена нового масляного насоса (при износе)
+         - Установка новых шпилек выпускного коллектора
+    `,
+    price: 185000,
+    oldPrice: 205000,
+    image: '/images/zmz-405.jpg',
+    category: 'zmz',
+    rating: 4.8,
+    reviews: 32,
+    inStock: true,
+    specs: {
+      power: '140-150 л.с.',
+      volume: '2.3 л',
+      cylinders: '4',
+      fuel: 'бензин',
+      weight: '175 кг',
+      crankshaft: 'Стальной',
+      valves: '16',
+      cooling: 'Жидкостное',
+      injector: 'Да (Евро 3)',
+    },
+    applications: ['ГАЗ-3110 "Волга"', 'Коммерческий транспорт', 'Внедорожники'],
+    advantages: [
+      'Восстановлен до заводских характеристик',
+      'Новые ключевые комплектующие',
+      'Не уступает новому двигателю',
+      'Доступная цена',
+      'Комплект "Идеальная фаза" Евро-3'
+    ],
+  },
 ];
 
 export default function ProductDetails() {
@@ -151,12 +215,60 @@ export default function ProductDetails() {
         </Link>
 
         {/* Product Info */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {/* Product Image */}
-          <div>
-            <div className="bg-white rounded-lg shadow-md p-4 h-full">
-              <div className="bg-gray-200 rounded-lg h-80 sm:h-96 flex items-center justify-center">
-                <span className="text-gray-500">Изображение недоступно</span>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <div className="relative aspect-square mb-4">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                style={{ objectFit: 'contain' }}
+                unoptimized={true}
+                className="rounded-md"
+                priority
+                onError={(e) => {
+                  // Fallback в случае ошибки загрузки изображения
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    const fallback = document.createElement('div');
+                    fallback.className = 'absolute inset-0 bg-gray-300 flex items-center justify-center';
+                    fallback.innerHTML = '<span class="text-gray-500">Изображение недоступно</span>';
+                    parent.appendChild(fallback);
+                  }
+                }}
+              />
+            </div>
+            <div className="grid grid-cols-4 gap-2">
+              {/* Дополнительные миниатюры изображений - можно добавить в будущем */}
+              <div className="cursor-pointer border-2 border-primary rounded">
+                <div className="relative aspect-square">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    unoptimized={true}
+                    className="rounded-md"
+                  />
+                </div>
+              </div>
+              <div className="cursor-pointer border border-gray-200 rounded hover:border-primary">
+                <div className="relative aspect-square bg-gray-100 flex items-center justify-center">
+                  <span className="text-gray-400 text-xs">Вид сбоку</span>
+                </div>
+              </div>
+              <div className="cursor-pointer border border-gray-200 rounded hover:border-primary">
+                <div className="relative aspect-square bg-gray-100 flex items-center justify-center">
+                  <span className="text-gray-400 text-xs">Вид сзади</span>
+                </div>
+              </div>
+              <div className="cursor-pointer border border-gray-200 rounded hover:border-primary">
+                <div className="relative aspect-square bg-gray-100 flex items-center justify-center">
+                  <span className="text-gray-400 text-xs">Детали</span>
+                </div>
               </div>
             </div>
           </div>

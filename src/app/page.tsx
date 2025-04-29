@@ -32,8 +32,8 @@ const featuredProducts = [
   },
   {
     id: 3,
-    name: 'Двигатель ЗМЗ-405',
-    description: 'Инжекторный двигатель для ГАЗель, Волга, Соболь',
+    name: 'Двигатель ЗМЗ-405 Евро 3',
+    description: 'Качественная реставрация с новыми запчастями',
     price: 185000,
     image: '/images/zmz-405.jpg',
     category: 'zmz',
@@ -174,11 +174,30 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="relative h-48">
-                  <div className="absolute inset-0 bg-gray-300 flex items-center justify-center">
-                    <span className="text-gray-500">Изображение недоступно</span>
+                <Link href={`/catalog/${product.id}`}>
+                  <div className="relative h-48">
+                    <Image 
+                      src={product.image} 
+                      alt={product.name}
+                      fill
+                      style={{objectFit: 'cover'}} 
+                      unoptimized={true}
+                      className="transition-transform hover:scale-105"
+                      onError={(e) => {
+                        // Fallback в случае ошибки загрузки изображения
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          const fallback = document.createElement('div');
+                          fallback.className = 'absolute inset-0 bg-gray-300 flex items-center justify-center';
+                          fallback.innerHTML = '<span class="text-gray-500">Изображение недоступно</span>';
+                          parent.appendChild(fallback);
+                        }
+                      }}
+                    />
                   </div>
-                </div>
+                </Link>
                 <div className="p-5">
                   <div className="mb-2">
                     <span className="text-xs text-white bg-primary px-2 py-1 rounded-full">
