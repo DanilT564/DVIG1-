@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   description: 'Восстановленные двигатели ЗМЗ и УМЗ для организаций с автопарком ГАЗ/УАЗ. Сдайте старый - получите восстановленный.',
 }
 
+// Убедимся, что генерируем статические маршруты
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+
 export default function RootLayout({
   children,
 }: {

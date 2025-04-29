@@ -146,6 +146,13 @@ const products = [
   },
 ];
 
+// Экспортируем функцию для генерации статических путей
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    id: product.id.toString(),
+  }));
+}
+
 export default function ProductDetails() {
   const params = useParams();
   const productId = parseInt(params.id as string, 10);

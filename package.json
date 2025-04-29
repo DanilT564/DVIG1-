@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node .next/standalone/server.js",
+    "start": "npx serve out",
     "lint": "next lint"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
+    "serve": "^14.2.1",
     "swiper": "^11.0.7"
   },
   "devDependencies": {

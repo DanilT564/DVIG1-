@@ -1,16 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Отключаем строгий режим для избегания потенциальных проблем в продакшене
-  reactStrictMode: false,
-  // Использование простой конфигурации для продакшена
-  output: 'standalone',
-  // Полностью отключаем обработку изображений через next/image
+  // Генерируем полностью статический сайт вместо серверного приложения
+  output: 'export',
+  // Отключаем обработку изображений
   images: {
     unoptimized: true,
     disableStaticImages: true,
   },
   // Отключаем минификацию для исключения возможных проблем
   swcMinify: false,
+  // Отключаем строгий режим React
+  reactStrictMode: false,
+  // Убираем расширения файлов в URL
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 

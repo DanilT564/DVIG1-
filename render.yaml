@@ -1,14 +1,11 @@
 services:
   - type: web
     name: motors-shop
-    env: node
-    plan: free
+    env: static
     buildCommand: npm install && npm run build
-    startCommand: node .next/standalone/server.js
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 3000
-    healthCheckPath: /
-    autoDeploy: true 
+    staticPublishPath: ./out
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate 
