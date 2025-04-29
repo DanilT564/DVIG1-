@@ -175,19 +175,10 @@ export default function Home() {
               <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                 <Link href={`/catalog/${product.id}`}>
                   <div className="relative h-48">
-                    <div className="w-full h-full overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform"
-                        onError={(e) => {
-                          // Fallback в случае ошибки загрузки изображения
-                          if (e.currentTarget.parentElement) {
-                            e.currentTarget.style.display = 'none';
-                            e.currentTarget.parentElement.innerHTML = '<div class="w-full h-full bg-gray-300 flex items-center justify-center"><span class="text-gray-500">Изображение недоступно</span></div>';
-                          }
-                        }}
-                      />
+                    <div className="w-full h-full overflow-hidden bg-gray-200">
+                      <div className="flex items-center justify-center h-full text-gray-400">
+                        {product.name}
+                      </div>
                     </div>
                   </div>
                 </Link>

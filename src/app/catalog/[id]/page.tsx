@@ -217,43 +217,27 @@ export default function ProductDetails() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {/* Product Image */}
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <div className="relative aspect-square mb-4">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-contain rounded-md"
-                onError={(e) => {
-                  // Fallback в случае ошибки загрузки изображения
-                  if (e.currentTarget.parentElement) {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.parentElement.innerHTML = '<div class="w-full h-full bg-gray-300 flex items-center justify-center"><span class="text-gray-500">Изображение недоступно</span></div>';
-                  }
-                }}
-              />
+            <div className="aspect-square mb-4 bg-gray-200 flex items-center justify-center">
+              <div className="text-gray-400 font-medium text-lg">{product.name}</div>
             </div>
             <div className="grid grid-cols-4 gap-2">
-              {/* Дополнительные миниатюры изображений */}
               <div className="cursor-pointer border-2 border-primary rounded">
-                <div className="relative aspect-square">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-contain rounded-md"
-                  />
+                <div className="aspect-square bg-gray-100 flex items-center justify-center">
+                  <span className="text-gray-400 text-xs">Фото 1</span>
                 </div>
               </div>
               <div className="cursor-pointer border border-gray-200 rounded hover:border-primary">
-                <div className="relative aspect-square bg-gray-100 flex items-center justify-center">
+                <div className="aspect-square bg-gray-100 flex items-center justify-center">
                   <span className="text-gray-400 text-xs">Вид сбоку</span>
                 </div>
               </div>
               <div className="cursor-pointer border border-gray-200 rounded hover:border-primary">
-                <div className="relative aspect-square bg-gray-100 flex items-center justify-center">
+                <div className="aspect-square bg-gray-100 flex items-center justify-center">
                   <span className="text-gray-400 text-xs">Вид сзади</span>
                 </div>
               </div>
               <div className="cursor-pointer border border-gray-200 rounded hover:border-primary">
-                <div className="relative aspect-square bg-gray-100 flex items-center justify-center">
+                <div className="aspect-square bg-gray-100 flex items-center justify-center">
                   <span className="text-gray-400 text-xs">Детали</span>
                 </div>
               </div>

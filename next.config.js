@@ -1,18 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  images: {
-    // Полностью отключаем оптимизацию изображений для предотвращения ошибок 502
-    unoptimized: true,
-    remotePatterns: [],
-  },
-  // Настройка для Render с включением копирования статических файлов
+  // Отключаем строгий режим для избегания потенциальных проблем в продакшене
+  reactStrictMode: false,
+  // Использование простой конфигурации для продакшена
   output: 'standalone',
-  experimental: {
-    // Это позволит Next.js копировать публичные файлы в standalone директорию
-    outputFileTracingRoot: process.cwd(),
+  // Полностью отключаем обработку изображений через next/image
+  images: {
+    unoptimized: true,
+    disableStaticImages: true,
   },
+  // Отключаем минификацию для исключения возможных проблем
+  swcMinify: false,
 }
 
 module.exports = nextConfig 
