@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent, useEffect } from 'react';
+import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { FiMapPin, FiMail, FiPhone, FiClock, FiSend } from 'react-icons/fi';
 
@@ -16,7 +16,6 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
-  const [mapLoaded, setMapLoaded] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -25,51 +24,6 @@ export default function Contact() {
       [name]: value,
     });
   };
-
-  useEffect(() => {
-    // Функция для загрузки API Яндекс.Карт
-    const loadYandexMaps = () => {
-      const script = document.createElement('script');
-      script.src = 'https://api-maps.yandex.ru/2.1/?apikey=ваш_api_key&lang=ru_RU';
-      script.async = true;
-      script.onload = initMap;
-      document.body.appendChild(script);
-    };
-
-    // Функция инициализации карты
-    const initMap = () => {
-      if (window.ymaps) {
-        window.ymaps.ready(() => {
-          // Координаты для Проезд авиаторов 12с2, Подольск
-          const map = new window.ymaps.Map('map', {
-            center: [55.441606, 37.570471], // примерные координаты для адреса
-            zoom: 15
-          });
-          
-          // Добавляем метку на карту
-          const placemark = new window.ymaps.Placemark([55.441606, 37.570471], {
-            hintContent: 'ООО "СПЕКТР"',
-            balloonContent: 'Московская область, г. Подольск, Проезд авиаторов 12с2'
-          }, {
-            preset: 'islands#redDotIcon'
-          });
-          
-          map.geoObjects.add(placemark);
-          map.behaviors.disable('scrollZoom');
-          
-          setMapLoaded(true);
-        });
-      }
-    };
-
-    loadYandexMaps();
-
-    return () => {
-      // Удаляем скрипт при размонтировании компонента
-      const scripts = document.querySelectorAll('script[src*="api-maps.yandex.ru"]');
-      scripts.forEach(script => script.remove());
-    };
-  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -309,19 +263,18 @@ export default function Contact() {
         </div>
         
         {/* Map */}
-        <div className="rounded-lg shadow-md overflow-hidden h-80 bg-gray-200">
-          <div id="map" className="w-full h-full">
-            {!mapLoaded && <div className="h-full w-full flex items-center justify-center"><p className="text-gray-600">Загрузка карты...</p></div>}
-          </div>
+        <div className="rounded-lg shadow-md overflow-hidden h-80">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2258.5111708087484!2d37.56788631620618!3d55.441610084412146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aa7fe9c7dfc9f%3A0xd3dcef0c28f05e3f!2z0J_RgNC-0LXQt9C0INCw0LLQuNCw0YLQvtGA0L7QsiAxMtGBMiwg0J_QvtC00L7Qu9GM0YHQuiwg0JzQvtGB0LrQvtCy0YHQutCw0Y8g0L7QsdC7Liwg0KDQvtGB0YHQuNGP!5e0!3m2!1sru!2s!4v1717437358467!5m2!1sru!2s"
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen={false} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>
   );
-}
-
-// Объявляем типы для window.ymaps
-declare global {
-  interface Window {
-    ymaps: any;
-  }
 } 
