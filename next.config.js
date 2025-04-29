@@ -1,23 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Генерируем полностью статический сайт вместо серверного приложения
-  output: 'export',
-  // Настройка изображений для статического экспорта
+  reactStrictMode: true,
+  swcMinify: true,
   images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    domains: ['example.com'],
   },
-  // Отключаем минификацию для исключения возможных проблем
-  swcMinify: false,
-  // Отключаем строгий режим React
-  reactStrictMode: false,
-  // Убираем расширения файлов в URL
-  trailingSlash: true,
+  // Настройка для Render
+  output: 'standalone',
 }
 
 module.exports = nextConfig 
