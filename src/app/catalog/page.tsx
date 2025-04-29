@@ -407,17 +407,17 @@ export default function Catalog() {
                           {product.category === 'zmz' ? 'ЗМЗ' : 'УМЗ'}
                         </span>
                       </div>
-                      <h3 className="font-bold text-lg mb-1">{product.name}</h3>
-                      <p className="text-gray-600 text-sm mb-2 line-clamp-2">
+                      <h3 className="font-bold text-lg mb-2">{product.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">
                         {product.description}
                       </p>
-                      <div className="grid grid-cols-2 gap-1 mb-3 text-xs text-gray-600">
+                      <div className="grid grid-cols-2 gap-1 mb-4 text-xs text-gray-600">
                         <div>Мощность: {product.specs.power}</div>
                         <div>Объем: {product.specs.volume}</div>
                         <div>Цилиндров: {product.specs.cylinders}</div>
                         <div>Топливо: {product.specs.fuel}</div>
                       </div>
-                      <div className="flex justify-between items-center">
+                      <div className="flex justify-between items-center mb-3">
                         <span className="text-xl font-bold text-primary">
                           {formatPrice(product.price)} ₽
                         </span>
@@ -425,6 +425,12 @@ export default function Catalog() {
                           В корзину
                         </button>
                       </div>
+                      <Link 
+                        href={`/catalog/${product.id}`}
+                        className="block text-center w-full py-2 text-primary border border-primary rounded hover:bg-primary hover:text-white transition-colors mt-2"
+                      >
+                        Подробнее
+                      </Link>
                     </div>
                   </div>
                 ))}
