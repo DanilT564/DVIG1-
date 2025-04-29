@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { FiShoppingCart, FiArrowLeft, FiCheck, FiTruck, FiShield, FiClock } from 'react-icons/fi';
 
@@ -219,39 +218,27 @@ export default function ProductDetails() {
           {/* Product Image */}
           <div className="bg-white p-4 rounded-lg shadow-md">
             <div className="relative aspect-square mb-4">
-              <Image
+              <img
                 src={product.image}
                 alt={product.name}
-                fill
-                style={{ objectFit: 'contain' }}
-                unoptimized={true}
-                className="rounded-md"
-                priority
+                className="w-full h-full object-contain rounded-md"
                 onError={(e) => {
                   // Fallback в случае ошибки загрузки изображения
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent) {
-                    const fallback = document.createElement('div');
-                    fallback.className = 'absolute inset-0 bg-gray-300 flex items-center justify-center';
-                    fallback.innerHTML = '<span class="text-gray-500">Изображение недоступно</span>';
-                    parent.appendChild(fallback);
+                  if (e.currentTarget.parentElement) {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement.innerHTML = '<div class="w-full h-full bg-gray-300 flex items-center justify-center"><span class="text-gray-500">Изображение недоступно</span></div>';
                   }
                 }}
               />
             </div>
             <div className="grid grid-cols-4 gap-2">
-              {/* Дополнительные миниатюры изображений - можно добавить в будущем */}
+              {/* Дополнительные миниатюры изображений */}
               <div className="cursor-pointer border-2 border-primary rounded">
                 <div className="relative aspect-square">
-                  <Image
+                  <img
                     src={product.image}
                     alt={product.name}
-                    fill
-                    style={{ objectFit: 'contain' }}
-                    unoptimized={true}
-                    className="rounded-md"
+                    className="w-full h-full object-contain rounded-md"
                   />
                 </div>
               </div>

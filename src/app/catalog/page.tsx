@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { FiFilter, FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 // Данные о продуктах
@@ -399,26 +398,20 @@ export default function Catalog() {
                   <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <Link href={`/catalog/${product.id}`}>
                       <div className="relative h-48">
-                        <Image 
-                          src={product.image} 
-                          alt={product.name}
-                          fill
-                          style={{objectFit: 'cover'}} 
-                          unoptimized={true}
-                          className="transition-transform hover:scale-105"
-                          onError={(e) => {
-                            // Fallback в случае ошибки загрузки изображения
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                            const parent = target.parentElement;
-                            if (parent) {
-                              const fallback = document.createElement('div');
-                              fallback.className = 'absolute inset-0 bg-gray-300 flex items-center justify-center';
-                              fallback.innerHTML = '<span class="text-gray-500">Изображение недоступно</span>';
-                              parent.appendChild(fallback);
-                            }
-                          }}
-                        />
+                        <div className="w-full h-full overflow-hidden">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform"
+                            onError={(e) => {
+                              // Fallback в случае ошибки загрузки изображения
+                              if (e.currentTarget.parentElement) {
+                                e.currentTarget.style.display = 'none';
+                                e.currentTarget.parentElement.innerHTML = '<div class="w-full h-full bg-gray-300 flex items-center justify-center"><span class="text-gray-500">Изображение недоступно</span></div>';
+                              }
+                            }}
+                          />
+                        </div>
                       </div>
                     </Link>
                     <div className="p-5">
