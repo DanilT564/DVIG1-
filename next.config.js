@@ -2,10 +2,15 @@
 const nextConfig = {
   // Генерируем полностью статический сайт вместо серверного приложения
   output: 'export',
-  // Отключаем обработку изображений
+  // Настройка изображений для статического экспорта
   images: {
     unoptimized: true,
-    disableStaticImages: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
   // Отключаем минификацию для исключения возможных проблем
   swcMinify: false,
