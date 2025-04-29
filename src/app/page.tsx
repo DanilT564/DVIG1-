@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { FiTruck, FiShield, FiCheckCircle, FiPhone } from 'react-icons/fi';
+import { FiTruck, FiShield, FiCheckCircle, FiPhone, FiClock, FiTool, FiCheck } from 'react-icons/fi';
 // @ts-ignore
 import { Swiper, SwiperSlide } from 'swiper/react';
 // @ts-ignore
@@ -52,23 +52,23 @@ const featuredProducts = [
 const advantages = [
   {
     icon: <FiTruck size={36} />,
-    title: 'Доставка по всей России',
-    description: 'Быстрая и надежная доставка в любой город',
+    title: 'Гибкие варианты',
+    description: 'Сдайте старый - получите восстановленный',
   },
   {
-    icon: <FiShield size={36} />,
-    title: 'Гарантия качества',
-    description: 'Официальная гарантия на все двигатели',
+    icon: <FiClock size={36} />,
+    title: 'Сокращение времени',
+    description: 'Избегайте простоя, двигатели всегда в наличии',
   },
   {
-    icon: <FiCheckCircle size={36} />,
-    title: 'Оригинальные запчасти',
-    description: 'Только сертифицированные комплектующие',
+    icon: <FiTool size={36} />,
+    title: 'Под ключ',
+    description: 'Через 24 часа автомобиль уже будет в строю',
   },
   {
-    icon: <FiPhone size={36} />,
-    title: 'Техническая поддержка',
-    description: 'Консультации специалистов 24/7',
+    icon: <FiCheck size={36} />,
+    title: 'Надежность',
+    description: 'Предоставляем гарантию на двигатели',
   },
 ];
 
@@ -107,10 +107,10 @@ export default function Home() {
         <div className="container mx-auto py-16 px-4 relative z-10">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Двигатели ЗМЗ и УМЗ с доставкой по всей России
+              Собственная сборка двигателей ЗМЗ/УМЗ
             </h1>
             <p className="text-xl mb-8">
-              Широкий выбор моторов для вашей техники с официальной гарантией
+              Коммерческое предложение по восстановленным двигателям для организаций с автопарком ГАЗ/УАЗ
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
@@ -239,24 +239,23 @@ export default function Home() {
       <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">
-            Готовы сделать заказ или нужна консультация?
+            Готовы сотрудничать с надежным партнером?
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Наши специалисты с радостью помогут вам подобрать подходящий двигатель или запчасти для вашей техники
+            ООО «Спектр» — это надежный партнер для всех, кто ценит качество, прозрачность и индивидуальный подход в обслуживании своих автомобилей.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a 
               href="tel:+79999999999" 
               className="btn bg-white text-primary hover:bg-gray-100 px-6 py-3 text-base"
             >
-              <FiPhone className="mr-2" />
-              +7 (999) 999-99-99
+              Позвонить нам
             </a>
             <Link 
               href="/contact" 
               className="btn border-2 border-white hover:bg-white hover:text-primary px-6 py-3 text-base"
             >
-              Написать нам
+              Отправить заявку
             </Link>
           </div>
         </div>

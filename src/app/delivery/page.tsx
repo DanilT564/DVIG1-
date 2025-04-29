@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FiTruck, FiPackage, FiCreditCard, FiShield, FiHelpCircle, FiPhone, FiMail } from 'react-icons/fi';
+import { FiTruck, FiPackage, FiCreditCard, FiShield, FiHelpCircle, FiPhone, FiMail, FiClock, FiTool } from 'react-icons/fi';
 
 export default function Delivery() {
   return (
@@ -24,19 +24,19 @@ export default function Delivery() {
             <div className="prose prose-lg max-w-none">
               <h2>Информация о доставке</h2>
               <p>
-                Мы осуществляем доставку двигателей ЗМЗ и УМЗ, а также запчастей по всей территории России. Наша компания работает с проверенными транспортными компаниями, что гарантирует своевременную и безопасную доставку вашего заказа.
+                ООО "СПЕКТР" организует доставку восстановленных двигателей ЗМЗ и УМЗ для организаций с автопарком ГАЗ/УАЗ по всей территории России. Мы работаем с проверенными транспортными компаниями, чтобы гарантировать своевременную и безопасную доставку вашего заказа.
               </p>
 
               <h3>Способы доставки</h3>
               <p>
-                В зависимости от региона и предпочтений клиента, мы предлагаем следующие варианты доставки:
+                В зависимости от региона и требований клиента, мы предлагаем следующие варианты доставки:
               </p>
               <ul>
                 <li>
-                  <strong>Самовывоз из офиса в Москве</strong> — бесплатно, в рабочие дни с 9:00 до 18:00
+                  <strong>Самовывоз из нашего центра в Подольске</strong> — бесплатно, в рабочие дни с 9:00 до 18:00
                 </li>
                 <li>
-                  <strong>Курьерская доставка по Москве и Московской области</strong> — от 500 руб., в зависимости от адреса и веса заказа
+                  <strong>Доставка по Москве и Московской области</strong> — от 1000 руб., в зависимости от адреса и типа двигателя
                 </li>
                 <li>
                   <strong>Транспортные компании</strong> — отправка в любой регион России через:
@@ -50,31 +50,28 @@ export default function Delivery() {
                 </li>
               </ul>
 
-              <h3>Сроки доставки</h3>
+              <h3>Сроки доставки и установки</h3>
               <p>
-                Сроки доставки зависят от выбранного способа доставки и региона:
+                Мы стремимся минимизировать время простоя вашего автопарка:
               </p>
               <ul>
-                <li>Москва и область — 1-3 рабочих дня</li>
-                <li>Центральный федеральный округ — 3-5 рабочих дней</li>
-                <li>Другие регионы России — 5-14 рабочих дней</li>
+                <li>Москва и область — <strong>доставка и установка за 24 часа</strong></li>
+                <li>Центральный федеральный округ — 2-3 рабочих дня</li>
+                <li>Другие регионы России — 3-7 рабочих дней</li>
               </ul>
               <p>
                 После оформления заказа менеджер свяжется с вами для уточнения деталей доставки и сообщит точные сроки.
               </p>
 
-              <h3>Стоимость доставки</h3>
+              <h3>Варианты сотрудничества</h3>
               <p>
-                Стоимость доставки рассчитывается индивидуально в зависимости от:
+                Мы предлагаем гибкие условия сотрудничества:
               </p>
               <ul>
-                <li>Веса и габаритов заказа</li>
-                <li>Выбранного способа доставки</li>
-                <li>Региона доставки</li>
+                <li><strong>Обмен двигателями</strong> - сдайте старый двигатель и получите восстановленный</li>
+                <li><strong>Срочная поставка</strong> - избегайте простоя, двигатели всегда в наличии</li>
+                <li><strong>Решение под ключ</strong> - через 24 часа автомобиль уже будет в строю</li>
               </ul>
-              <p>
-                При заказе на сумму от 100 000 рублей доставка до терминала транспортной компании в городе получателя осуществляется за наш счет!
-              </p>
 
               <h2>Способы оплаты</h2>
               <p>
@@ -101,29 +98,29 @@ export default function Delivery() {
               <h3 className="text-xl font-bold mb-4">Важная информация</h3>
               <div className="space-y-4">
                 <div className="flex">
-                  <FiPackage className="text-primary text-xl mt-1 mr-3 flex-shrink-0" />
+                  <FiTool className="text-primary text-xl mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">Упаковка</h4>
+                    <h4 className="font-semibold">Под ключ</h4>
                     <p className="text-gray-600 text-sm">
-                      Все двигатели и запчасти тщательно упаковываются для безопасной транспортировки.
+                      Через 24 часа автомобиль уже будет в строю.
                     </p>
                   </div>
                 </div>
                 <div className="flex">
-                  <FiShield className="text-primary text-xl mt-1 mr-3 flex-shrink-0" />
+                  <FiClock className="text-primary text-xl mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">Страховка</h4>
+                    <h4 className="font-semibold">Сокращение времени</h4>
                     <p className="text-gray-600 text-sm">
-                      По желанию клиента груз может быть застрахован на полную стоимость.
+                      Избегайте простоя, двигатели всегда в наличии.
                     </p>
                   </div>
                 </div>
                 <div className="flex">
                   <FiTruck className="text-primary text-xl mt-1 mr-3 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">Отслеживание</h4>
+                    <h4 className="font-semibold">Гибкие варианты</h4>
                     <p className="text-gray-600 text-sm">
-                      После отправки вы получите трек-номер для отслеживания заказа.
+                      Сдайте старый - получите восстановленный.
                     </p>
                   </div>
                 </div>
@@ -146,9 +143,9 @@ export default function Delivery() {
                   </a>
                 </div>
                 <div>
-                  <a href="mailto:info@motors.ru" className="text-white hover:underline flex items-center">
+                  <a href="mailto:info@spectr-motors.ru" className="text-white hover:underline flex items-center">
                     <FiMail className="mr-2" />
-                    info@motors.ru
+                    info@spectr-motors.ru
                   </a>
                 </div>
               </div>
@@ -188,9 +185,9 @@ export default function Delivery() {
 
         {/* CTA */}
         <div className="bg-light p-8 rounded-lg text-center border border-gray-200">
-          <h2 className="text-2xl font-bold mb-4">Готовы сделать заказ?</h2>
+          <h2 className="text-2xl font-bold mb-4">Готовы сократить время простоя вашего автопарка?</h2>
           <p className="text-lg mb-6">
-            Выберите нужный двигатель в нашем каталоге или свяжитесь с нами для консультации
+            Свяжитесь с нами для получения индивидуального коммерческого предложения
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link 

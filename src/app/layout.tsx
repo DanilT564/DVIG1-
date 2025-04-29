@@ -7,8 +7,8 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
-  title: 'Двигатели ЗМЗ/УМЗ | Интернет-магазин',
-  description: 'Купить двигатели ЗМЗ и УМЗ с доставкой по всей России',
+  title: 'ООО "СПЕКТР" | Собственная сборка двигателей ЗМЗ/УМЗ',
+  description: 'Восстановленные двигатели ЗМЗ и УМЗ для организаций с автопарком ГАЗ/УАЗ. Сдайте старый - получите восстановленный.',
 }
 
 export default function RootLayout({

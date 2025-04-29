@@ -74,7 +74,7 @@ export default function Contact() {
                   <FiMapPin className="text-2xl mt-1 mr-4" />
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Адрес</h3>
-                    <p>г. Москва, ул. Автомобильная, 123</p>
+                    <p>Московская область, г. Подольск, Проезд авиаторов 12с2</p>
                   </div>
                 </div>
                 
@@ -90,7 +90,7 @@ export default function Contact() {
                   <FiMail className="text-2xl mt-1 mr-4" />
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email</h3>
-                    <p><a href="mailto:info@motors.ru" className="hover:underline">info@motors.ru</a></p>
+                    <p><a href="mailto:info@spectr-motors.ru" className="hover:underline">info@spectr-motors.ru</a></p>
                   </div>
                 </div>
                 
@@ -101,6 +101,18 @@ export default function Contact() {
                     <p>Пн-Пт: 9:00 - 18:00</p>
                     <p>Сб: 10:00 - 15:00</p>
                     <p>Вс: Выходной</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="text-2xl mt-1 mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/></svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Реквизиты</h3>
+                    <p>ООО "СПЕКТР"</p>
+                    <p>ОГРН: 1217400012840</p>
+                    <p>ИНН/КПП: 7456047921/745601001</p>
                   </div>
                 </div>
               </div>

@@ -18,7 +18,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold text-primary">Двигатели ЗМЗ/УМЗ</span>
+            <span className="text-xl font-bold text-primary">ООО "СПЕКТР"</span>
           </Link>
 
           {/* Desktop Navigation */}

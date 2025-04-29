@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FiMapPin, FiMail, FiPhone } from 'react-icons/fi';
+import { FiMapPin, FiMail, FiPhone, FiHome } from 'react-icons/fi';
 
 const Footer = () => {
   return (
@@ -10,9 +10,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Двигатели ЗМЗ/УМЗ</h3>
+            <h3 className="text-lg font-bold mb-4">ООО "СПЕКТР"</h3>
             <p className="text-sm mb-4">
-              Продажа двигателей ЗМЗ и УМЗ с доставкой по всей России. Гарантия качества, низкие цены.
+              Собственная сборка двигателей ЗМЗ/УМЗ. Восстановленные двигатели для организаций с автопарком ГАЗ/УАЗ.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-secondary">
@@ -69,26 +69,26 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Продукция</h3>
+            <h3 className="text-lg font-bold mb-4">Преимущества</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/catalog/zmz" className="text-white hover:text-secondary transition-colors">
-                  Двигатели ЗМЗ
+                <Link href="/about" className="text-white hover:text-secondary transition-colors">
+                  Гибкие варианты сотрудничества
                 </Link>
               </li>
               <li>
-                <Link href="/catalog/umz" className="text-white hover:text-secondary transition-colors">
-                  Двигатели УМЗ
+                <Link href="/about" className="text-white hover:text-secondary transition-colors">
+                  Сокращение времени простоя
                 </Link>
               </li>
               <li>
-                <Link href="/catalog/parts" className="text-white hover:text-secondary transition-colors">
-                  Запчасти
+                <Link href="/about" className="text-white hover:text-secondary transition-colors">
+                  Решения под ключ за 24 часа
                 </Link>
               </li>
               <li>
-                <Link href="/catalog/accessories" className="text-white hover:text-secondary transition-colors">
-                  Аксессуары
+                <Link href="/about" className="text-white hover:text-secondary transition-colors">
+                  Гарантия на двигатели
                 </Link>
               </li>
             </ul>
@@ -100,7 +100,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <FiMapPin className="mt-1 mr-2" />
-                <span>г. Москва, ул. Автомобильная, 123</span>
+                <span>Московская область, г. Подольск, Проезд авиаторов 12с2</span>
               </li>
               <li className="flex items-center">
                 <FiPhone className="mr-2" />
@@ -110,16 +110,23 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <FiMail className="mr-2" />
-                <a href="mailto:info@motors.ru" className="hover:text-secondary transition-colors">
-                  info@motors.ru
+                <a href="mailto:info@spectr-motors.ru" className="hover:text-secondary transition-colors">
+                  info@spectr-motors.ru
                 </a>
+              </li>
+              <li className="flex items-start">
+                <FiHome className="mt-1 mr-2" />
+                <div>
+                  <div>ОГРН: 1217400012840</div>
+                  <div>ИНН/КПП: 7456047921/745601001</div>
+                </div>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-600 mt-8 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Двигатели ЗМЗ/УМЗ. Все права защищены.</p>
+          <p>&copy; {new Date().getFullYear()} ООО "СПЕКТР". Все права защищены.</p>
         </div>
       </div>
     </footer>
