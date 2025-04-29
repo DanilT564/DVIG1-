@@ -5,6 +5,8 @@ const nextConfig = {
   images: {
     domains: ['example.com'],
   },
+  // Настройка для Render
+  output: 'standalone',
 }
 
 module.exports = nextConfig 
