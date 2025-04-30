@@ -8,27 +8,17 @@ import { FiFilter, FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 const products = [
   {
     id: 1,
-    name: 'Двигатель ЗМЗ-405 Евро 3',
-    description: 'Качественная реставрация с новыми запчастями: блок цилиндров восстановлен до заводских характеристик, новые поршни, кольца, цепь ГРМ, прокладки и другие детали. Ничем не уступает новому, но стоит дешевле.',
+    name: 'Двигатель ЗМЗ-409',
+    description: 'Бензиновый двигатель для УАЗ Патриот, Хантер, Буханка',
     price: 215000,
-    image: '/images/zmz-405.jpg',
+    image: '/images/zmz-409.jpg',
     category: 'zmz',
     specs: {
-      power: '140-150 л.с.',
-      volume: '2.3 л',
+      power: '128 л.с.',
+      volume: '2.7 л',
       cylinders: '4',
       fuel: 'бензин',
     },
-    details: {
-      applications: 'Устанавливается на легковые автомобили (например, ГАЗ-3110 "Волга"), коммерческий транспорт и внедорожники.',
-      restoration: [
-        'Блок цилиндров: оригинальный б/у блок после опрессовки, расточки и продувки масляных каналов',
-        'ГБЦ: ремонт с заменой прокладок, сальников, притиркой клапанов',
-        'Поршневая группа: новые ремонтные поршни и кольца',
-        'Система ГРМ: новая цепь и комплект "Идеальная фаза" Евро-3 Киров',
-        'Вспомогательные системы: новый масляный насос, новые шпильки выпускного коллектора'
-      ]
-    }
   },
   {
     id: 2,
@@ -417,17 +407,17 @@ export default function Catalog() {
                           {product.category === 'zmz' ? 'ЗМЗ' : 'УМЗ'}
                         </span>
                       </div>
-                      <h3 className="font-bold text-lg mb-2">{product.name}</h3>
-                      <p className="text-gray-600 text-sm mb-4">
+                      <h3 className="font-bold text-lg mb-1">{product.name}</h3>
+                      <p className="text-gray-600 text-sm mb-2 line-clamp-2">
                         {product.description}
                       </p>
-                      <div className="grid grid-cols-2 gap-1 mb-4 text-xs text-gray-600">
+                      <div className="grid grid-cols-2 gap-1 mb-3 text-xs text-gray-600">
                         <div>Мощность: {product.specs.power}</div>
                         <div>Объем: {product.specs.volume}</div>
                         <div>Цилиндров: {product.specs.cylinders}</div>
                         <div>Топливо: {product.specs.fuel}</div>
                       </div>
-                      <div className="flex justify-between items-center mb-3">
+                      <div className="flex justify-between items-center">
                         <span className="text-xl font-bold text-primary">
                           {formatPrice(product.price)} ₽
                         </span>
@@ -435,12 +425,6 @@ export default function Catalog() {
                           В корзину
                         </button>
                       </div>
-                      <Link 
-                        href={`/catalog/${product.id}`}
-                        className="block text-center w-full py-2 text-primary border border-primary rounded hover:bg-primary hover:text-white transition-colors mt-2"
-                      >
-                        Подробнее
-                      </Link>
                     </div>
                   </div>
                 ))}
