@@ -135,7 +135,58 @@ export default function Home() {
       {/* Секция категорий удалена по запросу */}
 
       {/* Featured Products */}
-      {/* Секция популярных товаров удалена по запросу */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-dark text-center mb-12">
+            Популярные товары
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProducts.map((product) => (
+              <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-48">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="p-5">
+                  <div className="mb-2">
+                    <span className="text-xs text-white bg-primary px-2 py-1 rounded-full">
+                      {product.category === 'zmz' ? 'ЗМЗ' : 'УМЗ'}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-lg mb-2">{product.name}</h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    {product.description}
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xl font-bold text-primary">
+                      {formatPrice(product.price)} ₽
+                    </span>
+                    <button className="btn btn-secondary">
+                      В корзину
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/catalog"
+              className="inline-flex items-center btn btn-primary px-6 py-3"
+            >
+              Смотреть все товары
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Advantages */}
       <section className="py-16 bg-light">
