@@ -420,18 +420,18 @@ export default function Catalog() {
                         <div>Цилиндров: {product.specs.cylinders}</div>
                         <div>Топливо: {product.specs.fuel}</div>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-xl font-bold text-primary">
+                      <div className="flex flex-col">
+                        <span className="text-xl font-bold text-primary mb-2">
                           {formatPrice(product.price)} ₽
                         </span>
-                        <div className="flex gap-2">
+                        <div className="flex space-x-2">
                           <Link 
                             href={`/catalog/${product.id}`}
-                            className="bg-blue-800 hover:bg-blue-900 text-white px-4 py-2 rounded text-sm"
+                            className="btn btn-primary text-sm px-3 py-1"
                           >
                             Подробнее
                           </Link>
-                          <button className="bg-orange-400 hover:bg-orange-500 text-white px-4 py-2 rounded text-sm">
+                          <button className="btn btn-secondary text-sm px-3 py-1">
                             В корзину
                           </button>
                         </div>
