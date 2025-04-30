@@ -8,14 +8,14 @@ import { FiFilter, FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 const products = [
   {
     id: 1,
-    name: 'Двигатель ЗМЗ-409',
-    description: 'Бензиновый двигатель для УАЗ Патриот, Хантер, Буханка',
+    name: 'Двигатель ЗМЗ-405 Евро 3 Восстановленный',
+    description: 'Бензиновый двигатель для Легковых автомобилей',
     price: 215000,
-    image: '/images/zmz-409.jpg',
+    image: '/images/zmz-405.jpg',
     category: 'zmz',
     specs: {
-      power: '128 л.с.',
-      volume: '2.7 л',
+      power: '140-150 л.с.',
+      volume: '2.3 л',
       cylinders: '4',
       fuel: 'бензин',
     },

@@ -9,7 +9,7 @@ import { FiShoppingCart, FiArrowLeft, FiCheck, FiTruck, FiShield, FiClock } from
 const products = [
   {
     id: 1,
-    name: 'Двигатель ЗМЗ-409',
+    name: 'Двигатель ЗМЗ 405 евро 3 Восстановленный',
     description: 'Бензиновый двигатель для УАЗ Патриот, Хантер, Буханка',
     fullDescription: `
       Двигатель ЗМЗ-409 - это бензиновый инжекторный двигатель, который устанавливается на автомобили УАЗ Патриот, Хантер и Буханка. 
