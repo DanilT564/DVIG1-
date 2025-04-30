@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { FiFilter, FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { FiFilter, FiX, FiChevronDown, FiChevronUp, FiCheck } from 'react-icons/fi';
 
 // Данные о продуктах
 const products = [
@@ -406,6 +406,9 @@ export default function Catalog() {
                         <span className="text-xs text-white bg-primary px-2 py-1 rounded-full">
                           {product.category === 'zmz' ? 'ЗМЗ' : 'УМЗ'}
                         </span>
+                        <span className="text-sm font-medium text-green-600 ml-3 inline-flex items-center">
+                          <FiCheck className="mr-1" /> В наличии
+                        </span>
                       </div>
                       <h3 className="font-bold text-lg mb-1">{product.name}</h3>
                       <p className="text-gray-600 text-sm mb-2 line-clamp-2">
@@ -421,9 +424,17 @@ export default function Catalog() {
                         <span className="text-xl font-bold text-primary">
                           {formatPrice(product.price)} ₽
                         </span>
-                        <button className="btn btn-secondary">
-                          В корзину
-                        </button>
+                        <div className="flex space-x-2">
+                          <Link 
+                            href={`/catalog/${product.id}`}
+                            className="btn btn-primary text-sm px-3 py-1"
+                          >
+                            Подробнее
+                          </Link>
+                          <button className="btn btn-secondary text-sm px-3 py-1">
+                            В корзину
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
