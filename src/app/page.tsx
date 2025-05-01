@@ -16,10 +16,10 @@ import 'swiper/css/pagination';
 const featuredProducts = [
   {
     id: 1,
-    name: 'Двигатель ЗМЗ-409',
-    description: 'Бензиновый двигатель для УАЗ Патриот, Хантер, Буханка',
+    name: 'Двигатель ЗМЗ-405 Евро-3 ',
+    description: 'Бензиновый двигатель для легковых автомобилей',
     price: 215000,
-    image: '/images/zmz-409.jpg',
+    image: '/images/zmz-405.jpg',
     category: 'zmz',
   },
   {
@@ -53,7 +53,7 @@ const advantages = [
   {
     icon: <FiTruck size={36} />,
     title: 'Гибкие варианты',
-    description: 'Сдайте старый - получите восстановленный',
+    description: 'Сдайте старый - получите Скидку',
   },
   {
     icon: <FiClock size={36} />,
@@ -78,7 +78,7 @@ const categories = [
     id: 'zmz',
     name: 'Двигатели ЗМЗ',
     image: '/images/category-zmz.jpg',
-    description: 'Широкий выбор двигателей Заволжского моторного завода',
+    description: 'Широкий выбор двигателей Нашего моторного завода',
   },
   {
     id: 'umz',
