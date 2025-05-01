@@ -12,7 +12,7 @@ const products = [
     name: 'Двигатель ЗМЗ-405 Евро 3 Восстановленный',
     description: 'Бензиновый двигатель для Легковых автомобилей',
     price: 215000,
-    image: '/engine-zmz-40524.jpg',
+    image: '/engine1-zmz-405.jpg',
     category: 'zmz',
     specs: {
       power: '140-150 л.с.',
@@ -68,7 +68,7 @@ const products = [
     name: 'Двигатель ЗМЗ-40524',
     description: 'Бензиновый двигатель для ГАЗель, Евро-4',
     price: 195000,
-    image: '/engine-zmz-40524.jpg',
+    image: '/engine1-zmz-405.jpg',
     category: 'zmz',
     specs: {
       power: '140 л.с.',
