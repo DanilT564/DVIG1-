@@ -22,7 +22,7 @@ const products = [
       Замена нового масляного насоса (при износе). Установка новых шпилек выпускного коллектора.`,
     price: 150000,
     oldPrice: 175000,
-    image: '/engine1-zmz-405.jpg',
+    image: '/images/zmz1-405-new',
     category: 'zmz',
     rating: 5.0,
     reviews: 24,
