@@ -3,5 +3,5 @@ services:
     name: dvig1
     env: node
     nodeVersion: 16
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    buildCommand: bash ./build.sh
+    startCommand: bash ./start.sh
