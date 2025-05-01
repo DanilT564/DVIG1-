@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: dvig1
-    env: node
-    nodeVersion: 16
-    buildCommand: bash ./build.sh
-    startCommand: bash ./start.sh
