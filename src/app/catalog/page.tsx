@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FiFilter, FiX, FiChevronDown, FiChevronUp, FiCheck } from 'react-icons/fi';
+import Image from 'next/image';
 
 // Данные о продуктах
 const products = [
@@ -11,7 +12,7 @@ const products = [
     name: 'Двигатель ЗМЗ-405 Евро 3 Восстановленный',
     description: 'Бензиновый двигатель для Легковых автомобилей',
     price: 215000,
-    image: '/images/zmz-405.jpg',
+    image: '/engine-zmz-40524.jpg',
     category: 'zmz',
     specs: {
       power: '140-150 л.с.',
@@ -25,7 +26,7 @@ const products = [
     name: 'Двигатель УМЗ-421',
     description: 'Бензиновый двигатель для ГАЗель, Соболь',
     price: 195000,
-    image: '/images/umz-421.jpg',
+    image: '/umz-421.jpg',
     category: 'umz',
     specs: {
       power: '89 л.с.',
@@ -39,7 +40,7 @@ const products = [
     name: 'Двигатель ЗМЗ-405',
     description: 'Инжекторный двигатель для ГАЗель, Волга, Соболь',
     price: 185000,
-    image: '/images/zmz-405.jpg',
+    image: '/zmz-405.jpg',
     category: 'zmz',
     specs: {
       power: '152 л.с.',
@@ -53,7 +54,7 @@ const products = [
     name: 'Двигатель УМЗ-4216',
     description: 'Бензиновый двигатель Евро-4 для ГАЗель Бизнес',
     price: 210000,
-    image: '/images/umz-4216.jpg',
+    image: '/engine-umz-4216.jpg',
     category: 'umz',
     specs: {
       power: '106 л.с.',
@@ -67,7 +68,7 @@ const products = [
     name: 'Двигатель ЗМЗ-40524',
     description: 'Бензиновый двигатель для ГАЗель, Евро-4',
     price: 195000,
-    image: '/images/zmz-40524.jpg',
+    image: '/engine-zmz-40524.jpg',
     category: 'zmz',
     specs: {
       power: '140 л.с.',
@@ -81,7 +82,7 @@ const products = [
     name: 'Двигатель УМЗ-4213',
     description: 'Карбюраторный двигатель для УАЗ',
     price: 170000,
-    image: '/images/umz-4213.jpg',
+    image: '/umz-4213.jpg',
     category: 'umz',
     specs: {
       power: '100 л.с.',
@@ -95,7 +96,7 @@ const products = [
     name: 'Двигатель ЗМЗ-51432',
     description: 'Дизельный двигатель для УАЗ Патриот',
     price: 270000,
-    image: '/images/zmz-51432.jpg',
+    image: '/zmz-51432.jpg',
     category: 'zmz',
     specs: {
       power: '114 л.с.',
@@ -109,7 +110,7 @@ const products = [
     name: 'Двигатель УМЗ-4178',
     description: 'Карбюраторный двигатель для УАЗ',
     price: 160000,
-    image: '/images/umz-4178.jpg',
+    image: '/umz-4178.jpg',
     category: 'umz',
     specs: {
       power: '90 л.с.',
@@ -147,6 +148,8 @@ export default function Catalog() {
     price: true,
     fuel: true,
   });
+  // Состояние для отслеживания ошибок загрузки изображений
+  const [imageErrors, setImageErrors] = useState<{[key: number]: boolean}>({});
 
   // Обработчики фильтров
   const toggleCategory = (categoryId: string) => {
@@ -177,6 +180,14 @@ export default function Catalog() {
       ...expandedFilters,
       [section]: !expandedFilters[section]
     });
+  };
+
+  // Обработчик ошибки загрузки изображения
+  const handleImageError = (productId: number) => {
+    setImageErrors(prev => ({
+      ...prev,
+      [productId]: true
+    }));
   };
 
   // Фильтрация продуктов
@@ -397,9 +408,23 @@ export default function Catalog() {
                 {filteredProducts.map(product => (
                   <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="relative h-48">
-                      <div className="absolute inset-0 bg-gray-300 flex items-center justify-center">
-                        <span className="text-gray-500">Изображение недоступно</span>
-                      </div>
+                      {imageErrors[product.id] ? (
+                        <div className="absolute inset-0 bg-gray-300 flex items-center justify-center">
+                          <span className="text-gray-500">Изображение недоступно</span>
+                        </div>
+                      ) : (
+                        <Image 
+                          src={product.image}
+                          alt={product.name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          style={{ objectFit: 'cover' }}
+                          priority={product.id <= 3}
+                          placeholder="blur"
+                          blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                          onError={() => handleImageError(product.id)}
+                        />
+                      )}
                     </div>
                     <div className="p-5">
                       <div className="mb-2">
