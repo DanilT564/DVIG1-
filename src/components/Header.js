@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
+import { FaSearch, FaShoppingCart, FaUser, FaHome } from 'react-icons/fa';
 
 export default function Header() {
   return (
@@ -9,6 +9,9 @@ export default function Header() {
           <Link href="/" className="text-2xl font-bold">DVIG Shop</Link>
           
           <nav className="hidden md:flex space-x-6">
+            <Link href="/" className="hover:text-secondary transition-colors flex items-center">
+              <FaHome className="mr-1" /> Главная
+            </Link>
             <Link href="/catalog" className="hover:text-secondary transition-colors">Каталог</Link>
             <Link href="/delivery" className="hover:text-secondary transition-colors">Доставка</Link>
             <Link href="/about" className="hover:text-secondary transition-colors">О компании</Link>
