@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaShoppingCart, FaTruck, FaShieldAlt, FaRegCreditCard } from 'react-icons/fa';
+import { FaTruck, FaShieldAlt, FaRegCreditCard } from 'react-icons/fa';
 
 // Список всех товаров (в реальном приложении это было бы в базе данных или API)
 const productsData = [
@@ -177,7 +177,7 @@ export default function ProductPage({ params }) {
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-gray-600">Гарантия:</span>
-                <span className="font-medium">{product.specifications.warranty}</span>
+                <span className="font-medium">{product.specifications?.warranty || "12 месяцев"}</span>
               </div>
             </div>
             
@@ -187,13 +187,12 @@ export default function ProductPage({ params }) {
             </div>
             
             <div className="flex space-x-4">
-              <button className="bg-primary text-white px-6 py-3 rounded-md flex items-center hover:bg-primary/90 transition-colors">
-                <FaShoppingCart className="mr-2" />
-                В корзину
-              </button>
-              <button className="border border-primary text-primary px-6 py-3 rounded-md hover:bg-primary/10 transition-colors">
-                Купить в 1 клик
-              </button>
+              <Link href="/contacts" className="bg-primary text-white px-6 py-3 rounded-md flex items-center hover:bg-primary/90 transition-colors">
+                Оставить заявку
+              </Link>
+              <Link href={`tel:89001234567`} className="border border-primary text-primary px-6 py-3 rounded-md hover:bg-primary/10 transition-colors">
+                Позвонить
+              </Link>
             </div>
           </div>
         </div>
@@ -236,97 +235,60 @@ export default function ProductPage({ params }) {
         {/* Табы (Описание и характеристики) */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-10">
           <div className="border-b">
-            <div className="flex">
-              <button className="px-6 py-3 font-medium text-primary border-b-2 border-primary">
+            <nav className="flex">
+              <button className="px-6 py-3 font-medium text-primary border-b-2 border-primary focus:outline-none">
                 Описание
               </button>
-              <button className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700">
+              <button className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700 focus:outline-none">
                 Характеристики
               </button>
-              <button className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700">
+              <button className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700 focus:outline-none">
                 Доставка и оплата
               </button>
-            </div>
+            </nav>
           </div>
           
           <div className="p-6">
-            <h2 className="text-xl font-bold mb-4">Описание {product.name}</h2>
-            <p className="mb-4">{product.fullDescription}</p>
-            <p>
-              Двигатель поставляется в сборе, готовый к установке. Комплектация включает все необходимые навесные агрегаты 
-              и систему управления. Перед продажей каждый двигатель проходит стендовые испытания, 
-              что гарантирует его высокое качество и надежность.
-            </p>
+            <div>
+              <h2 className="text-xl font-bold mb-4">Описание {product.name}</h2>
+              <p className="text-gray-700">{product.fullDescription}</p>
+            </div>
           </div>
         </div>
         
-        {/* Технические характеристики */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-10">
-          <div className="p-6">
-            <h2 className="text-xl font-bold mb-4">Технические характеристики</h2>
-            <table className="w-full">
-              <tbody>
-                {Object.entries(product.specifications).map(([key, value], index) => (
-                  <tr key={key} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
-                    <td className="py-2 px-4 font-medium">{
-                      {
-                        manufacturer: 'Производитель',
-                        type: 'Тип двигателя',
-                        volume: 'Объем',
-                        power: 'Мощность',
-                        torque: 'Крутящий момент',
-                        cylinders: 'Цилиндры',
-                        fuelSystem: 'Система питания',
-                        weight: 'Вес',
-                        warranty: 'Гарантия'
-                      }[key]
-                    }</td>
-                    <td className="py-2 px-4">{value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        
-        {/* Похожие товары */}
+        {/* Рекомендуемые товары */}
         <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-6">Похожие товары</h2>
+          <h2 className="text-2xl font-bold mb-6">Вам может понравиться</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {productsData
-              .filter(p => p.id !== product.id)
-              .slice(0, 4)
-              .map(product => (
-                <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
-                  <Link href={`/product/${product.id}`}>
-                    <div className="relative h-48 w-full">
-                      <Image
-                        src={product.imageUrl}
-                        alt={product.name}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </Link>
-                  
-                  <div className="p-4">
-                    <Link href={`/product/${product.id}`}>
-                      <h3 className="font-medium text-lg mb-2 hover:text-primary transition-colors">{product.name}</h3>
-                    </Link>
-                    
-                    <p className="text-gray-600 text-sm mb-4">{product.shortDescription}</p>
-                    
-                    <div className="flex justify-between items-center">
-                      <span className="font-bold text-xl">{product.price.toLocaleString()} ₽</span>
-                      
-                      <button className="bg-secondary text-white p-2 rounded-full hover:bg-primary transition-colors">
-                        <FaShoppingCart size={18} />
-                      </button>
-                    </div>
+            {productsData.filter(p => p.id !== product.id).slice(0, 4).map(relatedProduct => (
+              <div key={relatedProduct.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                <Link href={`/product/${relatedProduct.id}`}>
+                  <div className="relative h-48 w-full">
+                    <Image 
+                      src={relatedProduct.imageUrl} 
+                      alt={relatedProduct.name}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
+                </Link>
+                
+                <div className="p-4">
+                  <Link href={`/product/${relatedProduct.id}`} className="block">
+                    <h3 className="font-medium hover:text-primary transition-colors">{relatedProduct.name}</h3>
+                  </Link>
+                  <div className="mt-2 font-bold">{relatedProduct.price.toLocaleString()} ₽</div>
                 </div>
-              ))}
+              </div>
+            ))}
           </div>
+        </div>
+        
+        {/* Кнопка возврата в каталог */}
+        <div className="text-center">
+          <Link href="/catalog" className="inline-block bg-gray-200 text-gray-800 px-6 py-3 rounded-md font-medium hover:bg-gray-300 transition-colors">
+            Вернуться в каталог
+          </Link>
         </div>
       </div>
     </div>
