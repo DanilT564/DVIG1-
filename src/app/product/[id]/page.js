@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaTruck, FaShieldAlt, FaRegCreditCard } from 'react-icons/fa';
+import formatPrice from '../../../utils/formatPrice';
 
 // Список всех товаров (в реальном приложении это было бы в базе данных или API)
 const productsData = [
@@ -182,7 +183,7 @@ export default function ProductPage({ params }) {
             </div>
             
             <div className="mb-6">
-              <div className="text-3xl font-bold text-primary mb-2">{product.price.toLocaleString()} ₽</div>
+              <div className="text-3xl font-bold text-primary mb-2">{formatPrice(product.price)}</div>
               <div className="text-sm text-gray-500">Цена указана с учетом НДС</div>
             </div>
             
@@ -277,7 +278,7 @@ export default function ProductPage({ params }) {
                   <Link href={`/product/${relatedProduct.id}`} className="block">
                     <h3 className="font-medium hover:text-primary transition-colors">{relatedProduct.name}</h3>
                   </Link>
-                  <div className="mt-2 font-bold">{relatedProduct.price.toLocaleString()} ₽</div>
+                  <div className="mt-2 font-bold text-primary">{formatPrice(relatedProduct.price)}</div>
                 </div>
               </div>
             ))}

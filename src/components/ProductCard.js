@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
+import formatPrice from '../utils/formatPrice';
 
 export default function ProductCard({ product }) {
   return (
@@ -24,7 +25,7 @@ export default function ProductCard({ product }) {
         <p className="text-gray-600 text-sm mb-4">{product.shortDescription}</p>
         
         <div className="flex justify-between items-center">
-          <span className="font-bold text-xl">{product.price.toLocaleString()} ₽</span>
+          <span className="font-bold text-xl text-primary">{formatPrice(product.price)}</span>
           
           <Link href={`/product/${product.id}`} className="bg-secondary text-white px-3 py-2 rounded-md hover:bg-primary transition-colors flex items-center">
             Подробнее <FaArrowRight className="ml-1" size={14} />
