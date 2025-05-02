@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 
 export default function ProductCard({ product }) {
   return (
@@ -26,9 +26,9 @@ export default function ProductCard({ product }) {
         <div className="flex justify-between items-center">
           <span className="font-bold text-xl">{product.price.toLocaleString()} ₽</span>
           
-          <button className="bg-secondary text-white p-2 rounded-full hover:bg-primary transition-colors">
-            <FaShoppingCart size={18} />
-          </button>
+          <Link href={`/product/${product.id}`} className="bg-secondary text-white px-3 py-2 rounded-md hover:bg-primary transition-colors flex items-center">
+            Подробнее <FaArrowRight className="ml-1" size={14} />
+          </Link>
         </div>
       </div>
     </div>
