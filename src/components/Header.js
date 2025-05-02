@@ -1,0 +1,33 @@
+import Link from 'next/link';
+import { FaSearch, FaShoppingCart, FaUser } from 'react-icons/fa';
+
+export default function Header() {
+  return (
+    <header className="bg-primary text-white">
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex justify-between items-center">
+          <Link href="/" className="text-2xl font-bold">DVIG Shop</Link>
+          
+          <nav className="hidden md:flex space-x-6">
+            <Link href="/catalog" className="hover:text-secondary transition-colors">Каталог</Link>
+            <Link href="/delivery" className="hover:text-secondary transition-colors">Доставка</Link>
+            <Link href="/about" className="hover:text-secondary transition-colors">О компании</Link>
+            <Link href="/contacts" className="hover:text-secondary transition-colors">Контакты</Link>
+          </nav>
+          
+          <div className="flex space-x-4 items-center">
+            <button className="hover:text-secondary transition-colors">
+              <FaSearch size={20} />
+            </button>
+            <Link href="/cart" className="hover:text-secondary transition-colors">
+              <FaShoppingCart size={20} />
+            </Link>
+            <Link href="/account" className="hover:text-secondary transition-colors">
+              <FaUser size={20} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+} 
