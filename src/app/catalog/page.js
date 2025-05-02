@@ -6,7 +6,7 @@ import ProductCard from '../../components/ProductCard';
 const products = [
   {
     id: 1,
-    name: 'Двигатель ЗМЗ-405',
+    name: 'Двигатель ЗМЗ-405 Евро 3',
     shortDescription: 'Бензиновый двигатель для автомобилей ГАЗ',
     price: 185000,
     imageUrl: '/zmz-405.jpg'
