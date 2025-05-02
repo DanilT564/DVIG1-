@@ -2,6 +2,9 @@ services:
   - type: web
     name: dvig1
     env: node
-    nodeVersion: 16
-    buildCommand: bash ./build.sh
-    startCommand: bash ./start.sh
+    nodeVersion: 18
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
