@@ -1,5 +1,8 @@
 import CatalogClient from '../../components/CatalogClient';
 
+// Отключаем статическую генерацию для решения проблемы с аутентификацией
+export const dynamic = 'force-dynamic';
+
 // Список всех товаров (в реальном приложении это было бы в базе данных или API)
 const productsData = [
   {
@@ -52,7 +55,7 @@ const productsData = [
   },
 ];
 
-export default function Catalog() {
+export default function Catalog() {  
   return (
     <div className="py-8">
       <div className="container mx-auto px-4">

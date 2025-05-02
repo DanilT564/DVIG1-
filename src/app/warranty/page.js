@@ -1,4 +1,8 @@
 import Link from 'next/link';
+import { FaShieldAlt, FaTools, FaCheck, FaClock, FaExclamationTriangle } from 'react-icons/fa';
+
+// Отключаем статическую генерацию для решения проблемы с аутентификацией
+export const dynamic = 'force-dynamic';
 
 export default function Warranty() {
   return (

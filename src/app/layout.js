@@ -7,6 +7,9 @@ export const metadata = {
   description: 'DVIG - Интернет-магазин двигателей',
 }
 
+// Отключаем статическую генерацию для решения проблемы с аутентификацией
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">

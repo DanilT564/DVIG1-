@@ -2,6 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ProductCard from '../../../components/ProductCard';
 
+// Отключаем статическую генерацию для решения проблемы с аутентификацией
+export const dynamic = 'force-dynamic';
+
 // Список двигателей УМЗ
 const umzEngines = [
   {
