@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaSearch, FaShoppingCart, FaUser, FaHome } from 'react-icons/fa';
+import { FaHome, FaWhatsapp, FaTelegram, FaPhone } from 'react-icons/fa';
 
 export default function Header() {
   return (
@@ -18,16 +18,17 @@ export default function Header() {
             <Link href="/contacts" className="hover:text-secondary transition-colors">Контакты</Link>
           </nav>
           
-          <div className="flex space-x-4 items-center">
-            <button className="hover:text-secondary transition-colors">
-              <FaSearch size={20} />
-            </button>
-            <Link href="/cart" className="hover:text-secondary transition-colors">
-              <FaShoppingCart size={20} />
-            </Link>
-            <Link href="/account" className="hover:text-secondary transition-colors">
-              <FaUser size={20} />
-            </Link>
+          <div className="flex items-center space-x-4">
+            <a href="tel:88001234567" className="flex items-center hover:text-secondary transition-colors">
+              <FaPhone className="mr-2" />
+              <span>8 (800) 123-45-67</span>
+            </a>
+            <a href="https://wa.me/88001234567" className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors">
+              <FaWhatsapp size={20} />
+            </a>
+            <a href="https://t.me/dvigshop" className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors">
+              <FaTelegram size={20} />
+            </a>
           </div>
         </div>
       </div>
