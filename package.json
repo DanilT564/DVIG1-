@@ -268,7 +268,6 @@
     "stable-hash": "^0.0.5",
     "streamsearch": "^1.1.0",
     "string-width": "^5.1.2",
-    "string-width-cjs": "^4.2.3",
     "string.prototype.includes": "^2.0.1",
     "string.prototype.matchall": "^4.0.12",
     "string.prototype.repeat": "^1.0.0",
@@ -276,7 +275,6 @@
     "string.prototype.trimend": "^1.0.9",
     "string.prototype.trimstart": "^1.0.8",
     "strip-ansi": "^6.0.1",
-    "strip-ansi-cjs": "^6.0.1",
     "strip-bom": "^3.0.0",
     "strip-json-comments": "^3.1.1",
     "styled-jsx": "^5.1.1",
@@ -314,15 +312,9 @@
     "which-typed-array": "^1.1.19",
     "word-wrap": "^1.2.5",
     "wrap-ansi": "^8.1.0",
-    "wrap-ansi-cjs": "^7.0.0",
     "wrappy": "^1.0.2",
     "yaml": "^2.7.1",
     "yocto-queue": "^0.1.0"
-  },
-  "resolutions": {
-    "string-width": "^4.2.3",
-    "strip-ansi": "^6.0.1",
-    "wrap-ansi": "^7.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
