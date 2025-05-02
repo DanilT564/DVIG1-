@@ -26,20 +26,18 @@ export default function About() {
 
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
           <div className="p-6">
-            <h2 className="text-2xl font-bold mb-4">Добро пожаловать в DVIG Shop!</h2>
+            <h2 className="text-2xl font-bold mb-4">Собственная сборка двигателей ЗМЗ/УМЗ</h2>
+            <div className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">Коммерческое предложение по восстановленным двигателям для организаций с автопарком ГАЗ/УАЗ</h3>
+              <p className="mb-1">OOO "СПЕКТР"</p>
+              <p className="mb-1">ОГРН: 1217400012840</p>
+              <p className="mb-1">ИНН/КПП: 7456047921/745601001</p>
+              <p className="mb-4">Фактический адрес: Московская область, г. Подольск, Проезд авиаторов 12с2</p>
+            </div>
             <p className="mb-4">
-              Мы - специализированный интернет-магазин по продаже двигателей ЗМЗ, УМЗ и запчастей к ним с доставкой по всей России.
-              Наша компания работает на рынке автозапчастей более 10 лет и за это время мы накопили огромный опыт 
-              в подборе и продаже двигателей для различных автомобилей.
-            </p>
-            <p className="mb-4">
-              Мы напрямую сотрудничаем с Заволжским и Ульяновским моторными заводами, 
-              что позволяет нам предлагать только оригинальную продукцию высокого качества 
-              по конкурентным ценам. Каждый двигатель проходит тщательную проверку перед отправкой клиенту.
-            </p>
-            <p>
-              Наша главная цель - обеспечивать клиентов качественными двигателями и запчастями, 
-              предоставляя при этом высокий уровень сервиса, профессиональную консультацию и оперативную доставку.
+              ООО «Спектр» — это надежный партнер для всех, кто ценит качество, прозрачность и 
+              индивидуальный подход в обслуживании своих автомобилей. Мы всегда готовы предложить 
+              лучшие решения для наших клиентов!
             </p>
           </div>
         </div>
@@ -47,42 +45,21 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-6">
-              <h2 className="text-xl font-bold mb-4">Наши преимущества</h2>
-              <ul className="space-y-3">
+              <h2 className="text-xl font-bold mb-4">О КОМПАНИИ</h2>
+              <ul className="space-y-6">
                 <li className="flex items-start">
-                  <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5">1</span>
-                  <div>
-                    <strong className="font-medium">Широкий ассортимент</strong>
-                    <p className="text-gray-600">В нашем каталоге представлены все модели двигателей ЗМЗ и УМЗ, а также запчасти к ним</p>
-                  </div>
+                  <span className="text-primary font-bold mr-2">—</span>
+                  <p className="text-gray-600">
+                    Мы узконаправленная организация, которая работает в нише «Обслуживания коммерческого 
+                    транспорта» предлагая ассортимент восстановленных ЗМЗ/УМЗ двигателей.
+                  </p>
                 </li>
                 <li className="flex items-start">
-                  <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5">2</span>
-                  <div>
-                    <strong className="font-medium">Гарантия качества</strong>
-                    <p className="text-gray-600">Мы предоставляем официальную гарантию на всю продукцию от производителя</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5">3</span>
-                  <div>
-                    <strong className="font-medium">Профессиональная консультация</strong>
-                    <p className="text-gray-600">Наши специалисты помогут подобрать оптимальный вариант под ваши задачи</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5">4</span>
-                  <div>
-                    <strong className="font-medium">Оперативная доставка</strong>
-                    <p className="text-gray-600">Доставляем заказы транспортными компаниями во все регионы России</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5">5</span>
-                  <div>
-                    <strong className="font-medium">Техническая поддержка</strong>
-                    <p className="text-gray-600">Оказываем консультации по установке и эксплуатации приобретенных двигателей</p>
-                  </div>
+                  <span className="text-primary font-bold mr-2">—</span>
+                  <p className="text-gray-600">
+                    С 2017 года мы успешно занимаемся восстановлением и сборкой двигателей, обретая 
+                    репутацию надежного партнера в отрасли. В 2024 году 366 клиентов убедились в этом.
+                  </p>
                 </li>
               </ul>
             </div>
@@ -90,21 +67,37 @@ export default function About() {
           
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-6">
-              <h2 className="text-xl font-bold mb-4">Наша миссия</h2>
-              <p className="mb-4">
-                Наша миссия - сделать приобретение качественного двигателя доступным и удобным для каждого клиента. 
-                Мы стремимся предоставлять не только товары высокого качества, но и комплексный сервис, включающий:
-              </p>
-              <ul className="list-disc list-inside space-y-2 mb-4 text-gray-600">
-                <li>Профессиональный подбор двигателя под конкретный автомобиль</li>
-                <li>Предпродажную проверку и тестирование каждого двигателя</li>
-                <li>Оперативную доставку в любой регион России</li>
-                <li>Техническую поддержку после покупки</li>
-                <li>Гарантийное обслуживание</li>
+              <h2 className="text-xl font-bold mb-4">Преимущества сотрудничества</h2>
+              <ul className="space-y-4 mb-6">
+                <li className="flex flex-col">
+                  <strong className="font-medium text-primary">ГИБКИЕ ВАРИАНТЫ</strong>
+                  <p className="text-gray-600">Сдайте старый - получите восстановленный.</p>
+                </li>
+                <li className="flex flex-col">
+                  <strong className="font-medium text-primary">СОКРАЩЕНИЕ ВРЕМЕНИ</strong>
+                  <p className="text-gray-600">Избегайте простоя, двигателя всегда в наличие.</p>
+                </li>
+                <li className="flex flex-col">
+                  <strong className="font-medium text-primary">ПОД КЛЮЧ</strong>
+                  <p className="text-gray-600">Через 24 часа автомобиль уже будет в строю.</p>
+                </li>
               </ul>
-              <p>
-                Мы работаем для того, чтобы вы могли быстро вернуть свой автомобиль на дорогу с надежным, проверенным двигателем.
-              </p>
+
+              <h2 className="text-xl font-bold mb-4">Выгоды для вас</h2>
+              <ul className="space-y-4">
+                <li className="flex flex-col">
+                  <strong className="font-medium text-primary">УДОБСТВО</strong>
+                  <p className="text-gray-600">Мы - ваш цех по обслуживанию моторов</p>
+                </li>
+                <li className="flex flex-col">
+                  <strong className="font-medium text-primary">ЭКОНОМИЯ ВРЕМЕНИ</strong>
+                  <p className="text-gray-600">Сокращаем время простоя автомобиля</p>
+                </li>
+                <li className="flex flex-col">
+                  <strong className="font-medium text-primary">НАДЕЖНОСТЬ</strong>
+                  <p className="text-gray-600">Предоставляем гарантию на двигатели</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -113,7 +106,7 @@ export default function About() {
           <div className="p-6">
             <h2 className="text-2xl font-bold mb-6">Наша команда</h2>
             <p className="mb-6">
-              В DVIG Shop работают профессионалы с многолетним опытом в автомобильной сфере. 
+              Работу ООО "СПЕКТР" обеспечивают профессионалы с многолетним опытом в автомобильной сфере. 
               Наши специалисты регулярно проходят обучение и повышают свою квалификацию, 
               чтобы предоставлять вам самую актуальную и точную информацию о двигателях.
             </p>

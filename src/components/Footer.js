@@ -7,13 +7,13 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">DVIG Shop</h3>
-            <p className="mb-4">Интернет-магазин двигателей ЗМЗ и УМЗ с доставкой по всей России</p>
+            <h3 className="text-xl font-bold mb-4">ООО «СПЕКТР»</h3>
+            <p className="mb-4">Собственная сборка двигателей ЗМЗ/УМЗ для организаций с автопарком ГАЗ/УАЗ</p>
             <div className="flex space-x-4">
-              <a href="https://t.me/dvigshop" className="hover:text-secondary transition-colors">
+              <a href="https://t.me/spectr" className="hover:text-secondary transition-colors">
                 <FaTelegram size={24} />
               </a>
-              <a href="https://vk.com/dvigshop" className="hover:text-secondary transition-colors">
+              <a href="https://vk.com/spectr" className="hover:text-secondary transition-colors">
                 <FaVk size={24} />
               </a>
               <a href="https://wa.me/79001234567" className="hover:text-secondary transition-colors">
@@ -39,17 +39,17 @@ export default function Footer() {
                 <FaPhone className="mr-2" /> <a href="tel:+79001234567" className="hover:text-secondary transition-colors">+7 (900) 123-45-67</a>
               </li>
               <li className="flex items-center">
-                <FaEnvelope className="mr-2" /> <a href="mailto:info@dvigshop.ru" className="hover:text-secondary transition-colors">info@dvigshop.ru</a>
+                <FaEnvelope className="mr-2" /> <a href="mailto:info@spectr.ru" className="hover:text-secondary transition-colors">info@spectr.ru</a>
               </li>
               <li className="flex items-center">
-                <FaMapMarkerAlt className="mr-2" /> <span>г. Москва, ул. Примерная, д. 123</span>
+                <FaMapMarkerAlt className="mr-2" /> <span>Московская область, г. Подольск, Проезд авиаторов 12с2</span>
               </li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-600 mt-8 pt-5 text-center">
-          <p>&copy; {new Date().getFullYear()} DVIG Shop. Все права защищены.</p>
+          <p>&copy; {new Date().getFullYear()} ООО «СПЕКТР». ОГРН: 1217400012840 ИНН/КПП: 7456047921/745601001</p>
         </div>
       </div>
     </footer>
