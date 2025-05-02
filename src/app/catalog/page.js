@@ -128,6 +128,24 @@ export default function Catalog() {
               </div>
               
               <div className="mb-4">
+                <h3 className="font-medium mb-2">Состояние</h3>
+                <div className="space-y-2">
+                  <label className="flex items-center">
+                    <input type="checkbox" className="mr-2" />
+                    <span>Новые</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input type="checkbox" className="mr-2" />
+                    <span>Контрактные</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input type="checkbox" className="mr-2" />
+                    <span>Восстановленные</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div className="mb-4">
                 <h3 className="font-medium mb-2">Цена</h3>
                 <div className="flex space-x-2">
                   <input 

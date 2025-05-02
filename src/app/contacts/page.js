@@ -38,7 +38,7 @@ export default function Contacts() {
                     <h3 className="font-medium text-lg">Телефон</h3>
                     <p className="text-gray-600 mb-1">Отдел продаж:</p>
                     <a href="tel:+79001234567" className="text-primary text-lg font-medium hover:text-primary/80">
-                      +7 (900) 123-45-67
+                      +7 (800) 123-45-67
                     </a>
                     <p className="text-gray-600 mt-2 mb-1">Техническая поддержка:</p>
                     <a href="tel:+79007654321" className="text-primary text-lg font-medium hover:text-primary/80">
@@ -71,7 +71,7 @@ export default function Contacts() {
                   <div>
                     <h3 className="font-medium text-lg">Адрес</h3>
                     <p className="text-gray-600 mb-1">Офис и склад:</p>
-                    <p className="text-lg">г. Москва, ул. Примерная, д. 123, офис 456</p>
+                    <p className="text-lg">Московская область, г. Подольск, Проезд авиаторов 12с2</p>
                     <p className="text-gray-600 mt-2">
                       Режим работы: Пн-Пт с 9:00 до 18:00
                     </p>
@@ -82,10 +82,10 @@ export default function Contacts() {
               <div className="mt-8">
                 <h3 className="font-medium text-lg mb-4">Мы в социальных сетях</h3>
                 <div className="flex space-x-4">
-                  <a href="https://t.me/dvigshop" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
+                  <a href="https://t.me/spectr" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
                     <FaTelegram size={24} className="text-primary" />
                   </a>
-                  <a href="https://vk.com/dvigshop" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
+                  <a href="https://vk.com/spectr" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
                     <FaVk size={24} className="text-primary" />
                   </a>
                   <a href="https://wa.me/79001234567" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
@@ -175,9 +175,26 @@ export default function Contacts() {
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-10">
           <div className="p-6">
             <h2 className="text-2xl font-bold mb-6">Как нас найти</h2>
-            <div className="aspect-video w-full bg-gray-200 flex items-center justify-center">
-              <p className="text-gray-500">Карта загружается...</p>
-              {/* В реальном проекте здесь будет карта Яндекс или Google Maps */}
+            <div className="aspect-video w-full">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2253.0471605992723!2d37.52926527665979!3d55.43255897993389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aadffb7cbbdbd%3A0xe4dc771200a67c0f!2z0J_RgNC-0LXQt9C0INCw0LLQuNCw0YLQvtGA0L7QsiwgMTIg0YHRgtGAMiwg0J_QvtC00L7Qu9GM0YHQuiwg0JzQvtGB0LrQvtCy0YHQutCw0Y8g0L7QsdC7LiwgMTQyMTE2!5e0!3m2!1sru!2sru!4v1718099953022!5m2!1sru!2sru" 
+                width="100%" 
+                height="450" 
+                style={{ border: 0 }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div className="mt-4">
+              <p className="text-gray-700">
+                <strong>ООО "СПЕКТР"</strong><br />
+                ОГРН: 1217400012840<br />
+                ИНН/КПП: 7456047921/745601001<br />
+                Фактический адрес: Московская область, г. Подольск, Проезд авиаторов 12с2<br />
+                Телефон: +7 (800) 123-45-67<br />
+                Email: info@dvigshop.ru
+              </p>
             </div>
           </div>
         </div>
