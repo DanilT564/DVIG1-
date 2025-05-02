@@ -1,10 +1,15 @@
 services:
   - type: web
-    name: dvig1-website
+    name: dvig1
     env: node
-    buildCommand: npm install --legacy-peer-deps && npm run build
+    nodeVersion: 18
+    buildCommand: npm install --legacy-peer-deps --production=false && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
-    autoDeploy: true
+      - key: RENDER_EXTERNAL_HOSTNAME
+        fromService:
+          name: dvig1
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL

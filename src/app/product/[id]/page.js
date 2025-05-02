@@ -4,9 +4,6 @@ import { FaTruck, FaShieldAlt, FaRegCreditCard } from 'react-icons/fa';
 import formatPrice from '../../../utils/formatPrice';
 import ProductTabs from '../../../components/ProductTabs';
 
-// Отключаем статическую генерацию для решения проблемы с аутентификацией
-export const dynamic = 'force-dynamic';
-
 // Список всех товаров (в реальном приложении это было бы в базе данных или API)
 const productsData = [
   {

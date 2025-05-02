@@ -2,9 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ProductCard from '../components/ProductCard';
 
-// Отключаем статическую генерацию для решения проблемы с аутентификацией
-export const dynamic = 'force-dynamic';
-
 // Примеры популярных товаров
 const popularProducts = [
   {

@@ -1,9 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { FaTruck, FaMoneyBill, FaCreditCard, FaBoxOpen, FaMapMarkerAlt, FaTruckMoving } from 'react-icons/fa';
-
-// Отключаем статическую генерацию для решения проблемы с аутентификацией
-export const dynamic = 'force-dynamic';
 
 export default function Delivery() {
   return (

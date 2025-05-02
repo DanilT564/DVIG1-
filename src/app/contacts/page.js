@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaVk, FaWhatsapp } from 'react-icons/fa';
 
-// Отключаем статическую генерацию для решения проблемы с аутентификацией
-export const dynamic = 'force-dynamic';
-
 export default function Contacts() {
   return (
     <div className="py-8">

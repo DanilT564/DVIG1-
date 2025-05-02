@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Отключаем статическую генерацию для решения проблемы с аутентификацией
-export const dynamic = 'force-dynamic';
-
 export default function About() {
   return (
     <div className="py-8">
