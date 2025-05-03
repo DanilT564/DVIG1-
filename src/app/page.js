@@ -9,7 +9,13 @@ const popularProducts = [
     name: 'Двигатель ЗМЗ-405',
     shortDescription: 'Бензиновый двигатель для автомобилей ГАЗ',
     price: 185000,
-    imageUrl: '/zmz-405.jpg'
+    imageUrl: '/zmz-405.jpg',
+    images: [
+      '/images/engines/zmz/zmz-405-1.jpg',
+      '/images/engines/zmz/zmz-405-2.jpg',
+      '/images/engines/zmz/zmz-405-3.jpg',
+      '/images/engines/zmz/zmz-405-4.jpg'
+    ]
   },
   {
     id: 2,

@@ -17,10 +17,10 @@ const productsData = [
     price: 150000,
     imageUrl: '/zmz-405.jpg',
     images: [
-      '/zmz-405.jpg',
-      '/engine-details-1.jpg',
-      '/engine-details-2.jpg',
-      '/engine-details-3.jpg'
+      '/images/engines/zmz/zmz-405-1.jpg',
+      '/images/engines/zmz/zmz-405-2.jpg',
+      '/images/engines/zmz/zmz-405-3.jpg',
+      '/images/engines/zmz/zmz-405-4.jpg'
     ],
     specifications: {
       manufacturer: 'Заволжский моторный завод (ЗМЗ)',
