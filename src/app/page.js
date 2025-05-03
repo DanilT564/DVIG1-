@@ -1,44 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ProductCard from '../components/ProductCard';
+import { productsData } from '../data/products';
 
-// Примеры популярных товаров
-const popularProducts = [
-  {
-    id: 1,
-    name: 'Двигатель ЗМЗ-405',
-    shortDescription: 'Бензиновый двигатель для автомобилей ГАЗ',
-    price: 185000,
-    imageUrl: '/zmz-405.jpg',
-    images: [
-      '/zmz-405-1.jpg',
-      '/zmz-405-2.jpg',
-      '/zmz-405-3.jpg',
-      '/zmz-405-4.jpg'
-    ]
-  },
-  {
-    id: 2,
-    name: 'Двигатель ЗМЗ-409',
-    shortDescription: 'Инжекторный двигатель для УАЗ Патриот',
-    price: 195000,
-    imageUrl: '/zmz-409.jpg'
-  },
-  {
-    id: 3,
-    name: 'Двигатель УМЗ-421',
-    shortDescription: 'Карбюраторный двигатель для УАЗ',
-    price: 160000,
-    imageUrl: '/umz-421.jpg'
-  },
-  {
-    id: 4,
-    name: 'Двигатель УМЗ-4213',
-    shortDescription: 'Инжекторный двигатель для УАЗ',
-    price: 175000,
-    imageUrl: '/umz-4213.jpg'
-  }
-];
+// Выбираем первые 4 продукта из общего списка для показа на главной
+const popularProducts = productsData.slice(0, 4);
 
 export default function Home() {
   return (

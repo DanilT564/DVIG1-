@@ -4,10 +4,13 @@ import { FaArrowRight, FaPlay } from 'react-icons/fa';
 import formatPrice from '../utils/formatPrice';
 
 export default function ProductCard({ product }) {
-  // Проверяем, есть ли у товара видео
-  const hasVideo = product.videoUrl !== undefined;
-  // Используем первое изображение из массива images, если оно есть, иначе используем imageUrl
-  const imageUrl = product.images && product.images.length > 0 ? product.images[0] : product.imageUrl;
+  // Проверяем, есть ли у товара видео и не является ли это ЗМЗ-405 евро 2 (id: 2)
+  const hasVideo = product.videoUrl !== undefined && product.id !== 2;
+  
+  // Для ЗМЗ-405 евро 2 (id: 2) всегда используем фото zmz-405-22.jpg
+  const imageUrl = product.id === 2 
+    ? '/zmz-405-22.jpg' 
+    : (product.images && product.images.length > 0 ? product.images[0] : product.imageUrl);
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
