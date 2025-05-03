@@ -211,7 +211,7 @@ export default function ProductPage({ params }) {
             
             <div className="mb-6">
               <div className="text-3xl font-bold text-primary mb-2">{formatPrice(product.price)}</div>
-              <div className="text-sm text-gray-500">Цена указана с учетом НДС</div>
+              <div className="text-sm text-gray-500">Цена указана без учета НДС</div>
             </div>
             
             <div className="flex space-x-4">

@@ -44,11 +44,6 @@ const umzEngines = [
 export default function UMZCatalog() {
   const [filteredEngines, setFilteredEngines] = useState(umzEngines);
   const [filters, setFilters] = useState({
-    type: {
-      'Бензиновый': false,
-      'Инжекторный': false,
-      'Карбюраторный': false
-    },
     price: {
       min: '',
       max: ''
@@ -85,15 +80,6 @@ export default function UMZCatalog() {
   // Apply all filters
   const applyFilters = () => {
     let result = [...umzEngines];
-
-    // Filter by engine type
-    const selectedTypes = Object.entries(filters.type)
-      .filter(([_, isSelected]) => isSelected)
-      .map(([name]) => name);
-    
-    if (selectedTypes.length > 0) {
-      result = result.filter(engine => selectedTypes.includes(engine.type));
-    }
 
     // Filter by price
     if (filters.price.min) {
@@ -142,39 +128,6 @@ export default function UMZCatalog() {
           <div className="md:col-span-1">
             <div className="bg-white p-4 rounded-lg shadow-md">
               <h2 className="text-xl font-bold mb-4">Фильтры</h2>
-              
-              <div className="mb-4">
-                <h3 className="font-medium mb-2">Тип двигателя</h3>
-                <div className="space-y-2">
-                  <label className="flex items-center">
-                    <input 
-                      type="checkbox" 
-                      className="mr-2" 
-                      checked={filters.type['Бензиновый']}
-                      onChange={() => handleCheckboxChange('type', 'Бензиновый')}
-                    />
-                    <span>Бензиновый</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input 
-                      type="checkbox" 
-                      className="mr-2" 
-                      checked={filters.type['Инжекторный']}
-                      onChange={() => handleCheckboxChange('type', 'Инжекторный')}
-                    />
-                    <span>Инжекторный</span>
-                  </label>
-                  <label className="flex items-center">
-                    <input 
-                      type="checkbox" 
-                      className="mr-2" 
-                      checked={filters.type['Карбюраторный']}
-                      onChange={() => handleCheckboxChange('type', 'Карбюраторный')}
-                    />
-                    <span>Карбюраторный</span>
-                  </label>
-                </div>
-              </div>
               
               <div className="mb-4">
                 <h3 className="font-medium mb-2">Цена</h3>
