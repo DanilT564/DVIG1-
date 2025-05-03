@@ -14,7 +14,8 @@ export default function ImageGallery({ images, videoUrl }) {
   // Проверяем, является ли текущий элемент видео
   const isVideo = (src) => {
     if (!src) return false;
-    return src.endsWith('.mp4') || src.endsWith('.webm') || src.endsWith('.mov') || src.endsWith('.avi');
+    const lowerSrc = src.toLowerCase();
+    return lowerSrc.endsWith('.mp4') || lowerSrc.endsWith('.webm') || lowerSrc.endsWith('.mov') || lowerSrc.endsWith('.avi');
   };
 
   // Проверяем, есть ли у товара видео
