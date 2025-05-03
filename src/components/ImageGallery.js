@@ -84,7 +84,7 @@ export default function ImageGallery({ images }) {
     <div className="select-none">
       {/* Основное изображение */}
       <div 
-        className="relative h-96 md:h-[500px] w-full mb-4 rounded-lg overflow-hidden bg-white shadow-md group"
+        className="relative h-[400px] md:h-[600px] w-full mb-4 rounded-lg overflow-hidden bg-white shadow-md group"
         onClick={handleMainImageClick}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}
@@ -156,7 +156,7 @@ export default function ImageGallery({ images }) {
         {images.map((img, index) => (
           <div 
             key={index}
-            className={`relative aspect-square rounded-lg overflow-hidden cursor-pointer transform transition-all duration-200 ${
+            className={`relative h-24 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-200 ${
               activeIndex === index 
                 ? 'ring-2 ring-primary scale-105 shadow-lg' 
                 : 'ring-1 ring-gray-200 hover:ring-primary/50 hover:scale-[1.03]'

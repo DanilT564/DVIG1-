@@ -272,7 +272,7 @@ export default function ProductPage({ params }) {
             {productsData.filter(p => p.id !== product.id).slice(0, 4).map(relatedProduct => (
               <div key={relatedProduct.id} className="bg-white rounded-lg shadow-md overflow-hidden">
                 <Link href={`/product/${relatedProduct.id}`}>
-                  <div className="relative h-48 w-full">
+                  <div className="relative h-64 w-full">
                     <Image 
                       src={relatedProduct.imageUrl} 
                       alt={relatedProduct.name}
