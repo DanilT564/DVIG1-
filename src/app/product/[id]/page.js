@@ -54,7 +54,7 @@ export default function ProductPage({ params }) {
         {/* Основная информация о товаре */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <ImageGallery images={product.images || [product.imageUrl]} />
+            <ImageGallery images={product.images || [product.imageUrl]} videoUrl={product.videoUrl} />
           </div>
           
           <div>

@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaPlay } from 'react-icons/fa';
 import formatPrice from '../utils/formatPrice';
 
 export default function ProductCard({ product }) {
+  // Проверяем, есть ли у товара видео
+  const hasVideo = product.videoUrl !== undefined;
   // Используем первое изображение из массива images, если оно есть, иначе используем imageUrl
   const imageUrl = product.images && product.images.length > 0 ? product.images[0] : product.imageUrl;
 
@@ -11,12 +13,30 @@ export default function ProductCard({ product }) {
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
       <Link href={`/product/${product.id}`}>
         <div className="relative h-64 w-full">
-          <Image
-            src={imageUrl}
-            alt={product.name}
-            fill
-            className="object-contain"
-          />
+          {hasVideo ? (
+            <div className="w-full h-full relative">
+              <video 
+                src={product.videoUrl}
+                className="w-full h-full object-contain"
+                muted
+                autoPlay
+                loop
+                playsInline
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="bg-primary bg-opacity-80 rounded-full p-3 text-white">
+                  <FaPlay />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <Image
+              src={imageUrl}
+              alt={product.name}
+              fill
+              className="object-contain"
+            />
+          )}
         </div>
       </Link>
       

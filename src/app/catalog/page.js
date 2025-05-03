@@ -4,96 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ProductCard from '../../components/ProductCard';
 import { useState, useEffect } from 'react';
+import { productsData as products } from '../../data/products';
 
 // Примеры товаров для каталога
-const products = [
-  {
-    id: 1,
-    name: 'Двигатель ЗМЗ-405 Евро 3',
-    shortDescription: 'Бензиновый двигатель для автомобилей ГАЗ',
-    price: 150000,
-    imageUrl: '/zmz-405.jpg',
-    images: [
-      '/zmz-405-1.jpg',
-      '/zmz-405-2.jpg',
-      '/zmz-405-3.jpg',
-      '/zmz-405-4.jpg'
-    ],
-    manufacturer: 'ЗМЗ',
-    type: 'Бензиновый',
-    condition: 'Новые'
-  },
-  {
-    id: 2,
-    name: 'Двигатель ЗМЗ-409',
-    shortDescription: 'Инжекторный двигатель для УАЗ Патриот',
-    price: 195000,
-    imageUrl: '/zmz-409.jpg',
-    manufacturer: 'ЗМЗ',
-    type: 'Инжекторный',
-    condition: 'Новые'
-  },
-  {
-    id: 3,
-    name: 'Двигатель УМЗ-421',
-    shortDescription: 'Карбюраторный двигатель для УАЗ',
-    price: 160000,
-    imageUrl: '/umz-421.jpg',
-    manufacturer: 'УМЗ',
-    type: 'Карбюраторный',
-    condition: 'Новые'
-  },
-  {
-    id: 4,
-    name: 'Двигатель УМЗ-4213',
-    shortDescription: 'Инжекторный двигатель для УАЗ',
-    price: 175000,
-    imageUrl: '/umz-4213.jpg',
-    manufacturer: 'УМЗ',
-    type: 'Инжекторный',
-    condition: 'Контрактные'
-  },
-  {
-    id: 5,
-    name: 'Двигатель ЗМЗ-51432',
-    shortDescription: 'Дизельный двигатель для УАЗ',
-    price: 230000,
-    imageUrl: '/zmz-51432.jpg',
-    manufacturer: 'ЗМЗ',
-    type: 'Дизельный',
-    condition: 'Новые'
-  },
-  {
-    id: 6,
-    name: 'Двигатель УМЗ-4216',
-    shortDescription: 'Бензиновый двигатель для ГАЗель Бизнес',
-    price: 198000,
-    imageUrl: '/engine-umz-4216.jpg',
-    manufacturer: 'УМЗ',
-    type: 'Бензиновый',
-    condition: 'Восстановленные'
-  },
-  {
-    id: 7,
-    name: 'Двигатель ЗМЗ-40524',
-    shortDescription: 'Бензиновый двигатель для ГАЗ, УАЗ',
-    price: 205000,
-    imageUrl: '/engine-zmz-40524.jpg',
-    manufacturer: 'ЗМЗ',
-    type: 'Бензиновый',
-    condition: 'Контрактные'
-  },
-  {
-    id: 8,
-    name: 'Двигатель УМЗ-4178',
-    shortDescription: 'Карбюраторный двигатель для УАЗ',
-    price: 155000,
-    imageUrl: '/umz-4178.jpg',
-    manufacturer: 'УМЗ',
-    type: 'Карбюраторный',
-    condition: 'Восстановленные'
-  }
-];
+// Removing static products since we're importing from data file
 
 export default function Catalog() {
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -150,7 +64,13 @@ export default function Catalog() {
       .map(([name]) => name);
     
     if (selectedManufacturers.length > 0) {
-      result = result.filter(product => selectedManufacturers.includes(product.manufacturer));
+      result = result.filter(product => 
+        selectedManufacturers.includes(product.manufacturer || 
+        (product.specifications && product.specifications.manufacturer ? 
+          product.specifications.manufacturer.includes('ЗМЗ') ? 'ЗМЗ' : 
+          product.specifications.manufacturer.includes('УМЗ') ? 'УМЗ' : ''
+        : ''))
+      );
     }
 
     // Filter by condition
@@ -159,7 +79,7 @@ export default function Catalog() {
       .map(([name]) => name);
     
     if (selectedConditions.length > 0) {
-      result = result.filter(product => selectedConditions.includes(product.condition));
+      result = result.filter(product => selectedConditions.includes(product.condition || 'Восстановленные'));
     }
 
     // Filter by price
