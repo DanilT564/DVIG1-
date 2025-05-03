@@ -4,12 +4,15 @@ import { FaArrowRight } from 'react-icons/fa';
 import formatPrice from '../utils/formatPrice';
 
 export default function ProductCard({ product }) {
+  // Используем первое изображение из массива images, если оно есть, иначе используем imageUrl
+  const imageUrl = product.images && product.images.length > 0 ? product.images[0] : product.imageUrl;
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg">
       <Link href={`/product/${product.id}`}>
         <div className="relative h-48 w-full">
           <Image
-            src={product.imageUrl}
+            src={imageUrl}
             alt={product.name}
             fill
             className="object-contain"

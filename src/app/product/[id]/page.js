@@ -1,8 +1,11 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaTruck, FaShieldAlt, FaRegCreditCard } from 'react-icons/fa';
 import formatPrice from '../../../utils/formatPrice';
 import ProductTabs from '../../../components/ProductTabs';
+import ImageGallery from '../../../components/ImageGallery';
 
 // Список всех товаров (в реальном приложении это было бы в базе данных или API)
 const productsData = [
@@ -13,6 +16,12 @@ const productsData = [
     fullDescription: 'Что входит в восстановление:\nБлок цилиндров:\nОригинальный б/у блок, прошедший:\nОпрессовку на герметичность.\nРасточку под ремонтный размер.\nПродувку масляных каналов.\nГБЦ (головка блока цилиндров):\nРемонт с заменой:\nНовых прокладок (ГБЦ, клапанной крышки, поддона).\nСальников (передний, задний).\nПритирка клапанов для герметичности.\nВосстановление резьбовых соединений.\nПоршневая группа:\nУстановка новых ремонтных поршней и колец.\nКонтроль зазоров между поршнями и цилиндрами.\nСистема ГРМ:\nУстановка новой цепи ГРМ и комплекта "Идеальная фаза" Евро-3 Киров.\nПроверка меток ГРМ для синхронизации коленвала и распредвала.\nВспомогательные системы:\nЗамена нового масляного насоса (при износе).\nУстановка новых шпилек выпускного коллектора.',
     price: 150000,
     imageUrl: '/zmz-405.jpg',
+    images: [
+      '/zmz-405.jpg',
+      '/engine-details-1.jpg',
+      '/engine-details-2.jpg',
+      '/engine-details-3.jpg'
+    ],
     specifications: {
       manufacturer: 'Заволжский моторный завод (ЗМЗ)',
       type: 'Бензиновый, инжекторный',
@@ -32,6 +41,12 @@ const productsData = [
     fullDescription: 'Инжекторный двигатель ЗМЗ-409 разработан для автомобилей УАЗ Патриот. Обеспечивает высокую проходимость и тяговые характеристики при движении по бездорожью. Объем 2.7 литра, мощность 143 л.с.',
     price: 195000,
     imageUrl: '/zmz-409.jpg',
+    images: [
+      '/zmz-409.jpg',
+      '/engine-details-1.jpg',
+      '/engine-details-2.jpg',
+      '/engine-details-3.jpg'
+    ],
     specifications: {
       manufacturer: 'Заволжский моторный завод (ЗМЗ)',
       type: 'Бензиновый, инжекторный',
@@ -51,6 +66,12 @@ const productsData = [
     fullDescription: 'Карбюраторный двигатель УМЗ-421 для автомобилей УАЗ. Простой в обслуживании и ремонте, надежный двигатель для внедорожников. Объем 2.9 литра, мощность 98 л.с.',
     price: 160000,
     imageUrl: '/umz-421.jpg',
+    images: [
+      '/umz-421.jpg',
+      '/engine-details-1.jpg',
+      '/engine-details-2.jpg',
+      '/engine-details-3.jpg'
+    ],
     specifications: {
       manufacturer: 'Ульяновский моторный завод (УМЗ)',
       type: 'Бензиновый, карбюраторный',
@@ -70,6 +91,12 @@ const productsData = [
     fullDescription: 'Инжекторный двигатель УМЗ-4213 для автомобилей УАЗ. Оптимальное сочетание цены и качества. Надежная конструкция и хорошие тяговые характеристики. Объем 2.9 литра, мощность 107 л.с.',
     price: 175000,
     imageUrl: '/umz-4213.jpg',
+    images: [
+      '/umz-4213.jpg',
+      '/engine-details-1.jpg',
+      '/engine-details-2.jpg',
+      '/engine-details-3.jpg'
+    ],
     specifications: {
       manufacturer: 'Ульяновский моторный завод (УМЗ)',
       type: 'Бензиновый, инжекторный',
@@ -89,6 +116,12 @@ const productsData = [
     fullDescription: 'Дизельный двигатель ЗМЗ-51432 для автомобилей УАЗ. Экономичный и тяговитый двигатель с турбонаддувом. Отличается низким расходом топлива и высоким крутящим моментом. Объем 2.2 литра, мощность 114 л.с.',
     price: 230000,
     imageUrl: '/zmz-51432.jpg',
+    images: [
+      '/zmz-51432.jpg',
+      '/engine-details-1.jpg',
+      '/engine-details-2.jpg',
+      '/engine-details-3.jpg'
+    ],
     specifications: {
       manufacturer: 'Заволжский моторный завод (ЗМЗ)',
       type: 'Дизельный, турбированный',
@@ -154,14 +187,7 @@ export default function ProductPage({ params }) {
         {/* Основная информация о товаре */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           <div className="bg-white p-4 rounded-lg shadow-md">
-            <div className="relative h-80 w-full">
-              <Image 
-                src={product.imageUrl} 
-                alt={product.name} 
-                fill
-                className="object-contain"
-              />
-            </div>
+            <ImageGallery images={product.images || [product.imageUrl]} />
           </div>
           
           <div>
