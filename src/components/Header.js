@@ -6,7 +6,7 @@ export default function Header() {
     <header className="bg-primary text-white">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">ООО «СПЕКТР»</Link>
+          <Link href="/" className="text-xl font-bold">ООО «СПЕКТР»</Link>
           
           <nav className="hidden md:flex space-x-6">
             <Link href="/" className="hover:text-secondary transition-colors flex items-center">
@@ -19,7 +19,7 @@ export default function Header() {
           </nav>
           
           <div className="flex items-center space-x-4">
-            <a href="tel:89001234567" className="flex items-center hover:text-secondary transition-colors">
+            <a href="tel:89001234567" className="flex items-center hover:text-secondary transition-colors text-sm">
               <FaPhone className="mr-2" />
               <span>8 (900) 123-45-67</span>
             </a>

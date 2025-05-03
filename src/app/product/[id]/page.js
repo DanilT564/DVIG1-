@@ -30,7 +30,7 @@ const productsData = [
       torque: '5200 Нм',
       cylinders: '4, с 16 клапанами.',
       fuelSystem: 'Распределенный впрыск',
-      weight: '165 кг',
+      weight: '135 кг',
       warranty: '12 месяцев'
     }
   },
@@ -191,7 +191,7 @@ export default function ProductPage({ params }) {
           </div>
           
           <div>
-            <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+            <h1 className="text-2xl font-bold mb-4">{product.name}</h1>
             <p className="text-gray-600 mb-6">{product.shortDescription}</p>
             
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
