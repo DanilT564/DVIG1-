@@ -4,8 +4,8 @@ import { FaArrowRight, FaPlay } from 'react-icons/fa';
 import formatPrice from '../utils/formatPrice';
 
 export default function ProductCard({ product }) {
-  // Проверяем, есть ли у товара видео и не является ли это ЗМЗ-405 евро 2 (id: 2)
-  const hasVideo = product.videoUrl !== undefined && product.id !== 2;
+  // Проверяем, есть ли у товара видео и не является ли это ЗМЗ-405 евро 2 (id: 2), а также исключаем id 7 и 8
+  const hasVideo = product.videoUrl !== undefined && product.id !== 2 && product.id !== 7 && product.id !== 8;
   
   // Для ЗМЗ-405 евро 2 (id: 2) всегда используем фото zmz-405-22.jpg
   const imageUrl = product.id === 2 
