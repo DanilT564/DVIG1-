@@ -150,7 +150,7 @@ export const productsData = [
       '/zmz-405-new4.jpg',
       
     ],
-    videoUrl: '/zmz-405-new3.mp4',
+    videoUrl: '/zmz-405-new3.MOV',
     specifications: {
       manufacturer: 'Заволжский моторный завод (ЗМЗ)',
       type: 'Бензиновый, инжекторный',
@@ -173,7 +173,7 @@ export const productsData = [
     images: [
       '/ymz-4216-1.jpg',
       '/ymz-4216-2.jpg',
-      '/ymz-4216-3jpg',
+      '/ymz-4216-3.jpg',
       '/ymz-4216-4.jpg'
     ],
     videoUrl: '/ymz-4216-5.mp4',
