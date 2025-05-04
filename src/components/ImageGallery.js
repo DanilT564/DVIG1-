@@ -199,7 +199,27 @@ export default function ImageGallery({ images, videoUrl }) {
                 ? 'ring-2 ring-primary scale-105 shadow-lg' 
                 : 'ring-1 ring-gray-200 hover:ring-primary/50 hover:scale-[1.03]'
             }`}
-            onClick={() => setActiveIndex(index)}
+            onClick={(e) => {
+              e.preventDefault(); 
+              e.stopPropagation();
+              setActiveIndex(index);
+            }}
+            onMouseEnter={() => {
+              // Предзагрузка изображения при наведении
+              if (!isVideo(item)) {
+                const img = new Image();
+                img.src = item;
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            aria-label={`View image ${index + 1}`}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setActiveIndex(index);
+              }
+            }}
           >
             {isVideo(item) ? (
               <div className="relative w-full h-full bg-black">
@@ -207,6 +227,7 @@ export default function ImageGallery({ images, videoUrl }) {
                   src={item}
                   className="w-full h-full object-cover"
                   muted
+                  preload="metadata"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="bg-primary bg-opacity-80 rounded-full p-2 text-white">
@@ -215,13 +236,16 @@ export default function ImageGallery({ images, videoUrl }) {
                 </div>
               </div>
             ) : (
-              <Image 
-                src={item} 
-                alt={`Thumbnail ${index + 1}`} 
-                fill
-                sizes="(max-width: 768px) 25vw, 10vw"
-                className="object-cover hover:opacity-90 transition-opacity"
-              />
+              <div className="w-full h-full">
+                <Image 
+                  src={item} 
+                  alt={`Thumbnail ${index + 1}`} 
+                  fill
+                  sizes="(max-width: 768px) 25vw, 10vw"
+                  className="object-cover hover:opacity-90 transition-opacity"
+                  loading="eager" // Принудительная загрузка миниатюр
+                />
+              </div>
             )}
             {activeIndex === index && (
               <div className="absolute inset-0 border-2 border-primary rounded-lg pointer-events-none" />
