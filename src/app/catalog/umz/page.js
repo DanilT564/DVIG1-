@@ -4,46 +4,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ProductCard from '../../../components/ProductCard';
 import { useState, useEffect } from 'react';
+import { productsData } from '../../../data/products';
 
-// Список двигателей УМЗ
-const umzEngines = [
-  {
-    id: 3,
-    name: 'Двигатель УМЗ-421',
-    shortDescription: 'Карбюраторный двигатель для УАЗ',
-    price: 160000,
-    imageUrl: '/umz-421.jpg',
-    type: 'Карбюраторный'
-  },
-  {
-    id: 4,
-    name: 'Двигатель УМЗ-4213',
-    shortDescription: 'Инжекторный двигатель для УАЗ',
-    price: 175000,
-    imageUrl: '/umz-4213.jpg',
-    type: 'Инжекторный'
-  },
-  {
-    id: 6,
-    name: 'Двигатель УМЗ-4216',
-    shortDescription: 'Бензиновый двигатель для ГАЗель Бизнес',
-    price: 198000,
-    imageUrl: '/engine-umz-4216.jpg',
-    type: 'Бензиновый'
-  },
-  {
-    id: 8,
-    name: 'Двигатель УМЗ-4178',
-    shortDescription: 'Карбюраторный двигатель для УАЗ',
-    price: 155000,
-    imageUrl: '/umz-4178.jpg',
-    type: 'Карбюраторный'
-  }
-];
+// Фильтруем только двигатели УМЗ (id 8)
+const umzEngines = productsData.filter(product => 
+  product.id === 8 || 
+  (product.specifications && product.specifications.manufacturer && product.specifications.manufacturer.includes('УМЗ'))
+);
 
 export default function UMZCatalog() {
   const [filteredEngines, setFilteredEngines] = useState(umzEngines);
   const [filters, setFilters] = useState({
+    condition: {
+      'Новые': false,
+      'Контрактные': false,
+      'Восстановленные': false
+    },
     price: {
       min: '',
       max: ''
@@ -80,6 +56,15 @@ export default function UMZCatalog() {
   // Apply all filters
   const applyFilters = () => {
     let result = [...umzEngines];
+
+    // Filter by condition
+    const selectedConditions = Object.entries(filters.condition)
+      .filter(([_, isSelected]) => isSelected)
+      .map(([name]) => name);
+    
+    if (selectedConditions.length > 0) {
+      result = result.filter(product => selectedConditions.includes(product.condition || 'Восстановленные'));
+    }
 
     // Filter by price
     if (filters.price.min) {
@@ -128,6 +113,30 @@ export default function UMZCatalog() {
           <div className="md:col-span-1">
             <div className="bg-white p-4 rounded-lg shadow-md">
               <h2 className="text-xl font-bold mb-4">Фильтры</h2>
+              
+              <div className="mb-4">
+                <h3 className="font-medium mb-2">Состояние</h3>
+                <div className="space-y-2">
+                  <label className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="mr-2" 
+                      checked={filters.condition['Новые']}
+                      onChange={() => handleCheckboxChange('condition', 'Новые')}
+                    />
+                    <span>Новые</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="mr-2" 
+                      checked={filters.condition['Восстановленные']}
+                      onChange={() => handleCheckboxChange('condition', 'Восстановленные')}
+                    />
+                    <span>Восстановленные</span>
+                  </label>
+                </div>
+              </div>
               
               <div className="mb-4">
                 <h3 className="font-medium mb-2">Цена</h3>

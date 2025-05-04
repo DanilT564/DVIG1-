@@ -64,13 +64,19 @@ export default function Catalog() {
       .map(([name]) => name);
     
     if (selectedManufacturers.length > 0) {
-      result = result.filter(product => 
-        selectedManufacturers.includes(product.manufacturer || 
-        (product.specifications && product.specifications.manufacturer ? 
-          product.specifications.manufacturer.includes('ЗМЗ') ? 'ЗМЗ' : 
-          product.specifications.manufacturer.includes('УМЗ') ? 'УМЗ' : ''
-        : ''))
-      );
+      result = result.filter(product => {
+        // Проверяем, содержит ли название производителя в specifications ЗМЗ или УМЗ
+        const manufacturer = product.specifications && product.specifications.manufacturer;
+        if (manufacturer) {
+          if (selectedManufacturers.includes('ЗМЗ') && manufacturer.includes('ЗМЗ')) return true;
+          if (selectedManufacturers.includes('УМЗ') && manufacturer.includes('УМЗ')) return true;
+          return false;
+        } 
+        // Если у товара нет свойства manufacturer, проверяем по ID
+        if (selectedManufacturers.includes('ЗМЗ') && product.id >= 1 && product.id <= 7) return true;
+        if (selectedManufacturers.includes('УМЗ') && product.id === 8) return true;
+        return false;
+      });
     }
 
     // Filter by condition
@@ -79,7 +85,7 @@ export default function Catalog() {
       .map(([name]) => name);
     
     if (selectedConditions.length > 0) {
-      result = result.filter(product => selectedConditions.includes(product.condition || 'Восстановленные'));
+      result = result.filter(product => selectedConditions.includes(product.condition));
     }
 
     // Filter by price

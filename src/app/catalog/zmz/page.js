@@ -4,52 +4,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ProductCard from '../../../components/ProductCard';
 import { useState, useEffect } from 'react';
+import { productsData } from '../../../data/products';
 
-// Список двигателей ЗМЗ
-const zmzEngines = [
-  {
-    id: 1,
-    name: 'Двигатель ЗМЗ-405',
-    shortDescription: 'Бензиновый двигатель для автомобилей ГАЗ',
-    price: 185000,
-    imageUrl: '/zmz-405.jpg',
-    images: [
-      '/zmz-405-1.jpg',
-      '/zmz-405-2.jpg',
-      '/zmz-405-3.jpg',
-      '/zmz-405-4.jpg'
-    ],
-    type: 'Бензиновый'
-  },
-  {
-    id: 2,
-    name: 'Двигатель ЗМЗ-409',
-    shortDescription: 'Инжекторный двигатель для УАЗ Патриот',
-    price: 195000,
-    imageUrl: '/zmz-409.jpg',
-    type: 'Инжекторный'
-  },
-  {
-    id: 5,
-    name: 'Двигатель ЗМЗ-51432',
-    shortDescription: 'Дизельный двигатель для УАЗ',
-    price: 230000,
-    imageUrl: '/zmz-51432.jpg',
-    type: 'Дизельный'
-  },
-  {
-    id: 7,
-    name: 'Двигатель ЗМЗ-40524',
-    shortDescription: 'Бензиновый двигатель для ГАЗ, УАЗ',
-    price: 205000,
-    imageUrl: '/engine-zmz-40524.jpg',
-    type: 'Бензиновый'
-  }
-];
+// Фильтруем только двигатели ЗМЗ (id 1-7)
+const zmzEngines = productsData.filter(product => 
+  (product.id >= 1 && product.id <= 7) || 
+  (product.specifications && product.specifications.manufacturer && product.specifications.manufacturer.includes('ЗМЗ'))
+);
 
 export default function ZMZCatalog() {
   const [filteredEngines, setFilteredEngines] = useState(zmzEngines);
   const [filters, setFilters] = useState({
+    condition: {
+      'Новые': false,
+      'Контрактные': false,
+      'Восстановленные': false
+    },
     price: {
       min: '',
       max: ''
@@ -86,6 +56,15 @@ export default function ZMZCatalog() {
   // Apply all filters
   const applyFilters = () => {
     let result = [...zmzEngines];
+
+    // Filter by condition
+    const selectedConditions = Object.entries(filters.condition)
+      .filter(([_, isSelected]) => isSelected)
+      .map(([name]) => name);
+    
+    if (selectedConditions.length > 0) {
+      result = result.filter(product => selectedConditions.includes(product.condition || 'Восстановленные'));
+    }
 
     // Filter by price
     if (filters.price.min) {
@@ -134,6 +113,30 @@ export default function ZMZCatalog() {
           <div className="md:col-span-1">
             <div className="bg-white p-4 rounded-lg shadow-md">
               <h2 className="text-xl font-bold mb-4">Фильтры</h2>
+              
+              <div className="mb-4">
+                <h3 className="font-medium mb-2">Состояние</h3>
+                <div className="space-y-2">
+                  <label className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="mr-2" 
+                      checked={filters.condition['Новые']}
+                      onChange={() => handleCheckboxChange('condition', 'Новые')}
+                    />
+                    <span>Новые</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="mr-2" 
+                      checked={filters.condition['Восстановленные']}
+                      onChange={() => handleCheckboxChange('condition', 'Восстановленные')}
+                    />
+                    <span>Восстановленные</span>
+                  </label>
+                </div>
+              </div>
               
               <div className="mb-4">
                 <h3 className="font-medium mb-2">Цена</h3>
