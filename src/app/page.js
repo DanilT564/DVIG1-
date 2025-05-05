@@ -16,6 +16,8 @@ export default function Home() {
             src="/GlaB1.JPG" 
             alt="Background" 
             fill
+            quality={100}
+            sizes="100vw"
             className="object-cover"
             priority
           />
