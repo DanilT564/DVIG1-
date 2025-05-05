@@ -25,10 +25,10 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-blue-900">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
                 Собственная сборка двигателей ЗМЗ/УМЗ
               </h1>
-              <p className="text-xl mb-6 text-blue-800">
+              <p className="text-xl mb-6 text-white">
                 Коммерческое предложение по восстановленным двигателям для организаций с автопарком ГАЗ/УАЗ
               </p>
               <Link href="/catalog" 
