@@ -37,12 +37,12 @@ export default function Contacts() {
                   <div>
                     <h3 className="font-medium text-lg">Телефон</h3>
                     <p className="text-gray-600 mb-1">Отдел продаж:</p>
-                    <a href="tel:+79001234567" className="text-primary text-lg font-medium hover:text-primary/80">
-                      +7 (800) 123-45-67
+                    <a href="tel:89681177773" className="text-primary text-lg font-medium hover:text-primary/80">
+                      8 968 117-77-73
                     </a>
                     <p className="text-gray-600 mt-2 mb-1">Техническая поддержка:</p>
-                    <a href="tel:+79007654321" className="text-primary text-lg font-medium hover:text-primary/80">
-                      +7 (900) 765-43-21
+                    <a href="tel:89681177773" className="text-primary text-lg font-medium hover:text-primary/80">
+                      8 968 117-77-73
                     </a>
                   </div>
                 </div>
@@ -54,12 +54,12 @@ export default function Contacts() {
                   <div>
                     <h3 className="font-medium text-lg">Электронная почта</h3>
                     <p className="text-gray-600 mb-1">Общие вопросы:</p>
-                    <a href="mailto:info@dvigshop.ru" className="text-primary text-lg font-medium hover:text-primary/80">
-                      info@dvigshop.ru
+                    <a href="mailto:1umudov@mail.ru" className="text-primary text-lg font-medium hover:text-primary/80">
+                      1umudov@mail.ru
                     </a>
                     <p className="text-gray-600 mt-2 mb-1">Отдел продаж:</p>
-                    <a href="mailto:sales@dvigshop.ru" className="text-primary text-lg font-medium hover:text-primary/80">
-                      sales@dvigshop.ru
+                    <a href="mailto:1umudov@mail.ru" className="text-primary text-lg font-medium hover:text-primary/80">
+                      1umudov@mail.ru
                     </a>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export default function Contacts() {
                     <p className="text-gray-600 mb-1">Офис и склад:</p>
                     <p className="text-lg">Московская область, г. Подольск, Проезд авиаторов 12с2</p>
                     <p className="text-gray-600 mt-2">
-                      Режим работы: Пн-Пт с 9:00 до 18:00
+                      Режим работы: Пн-Вс с 10:00 до 21:00 по Мск
                     </p>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ export default function Contacts() {
                   <a href="https://vk.com/spectr" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
                     <FaVk size={24} className="text-primary" />
                   </a>
-                  <a href="https://wa.me/79001234567" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
+                  <a href="https://wa.me/89681177773" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
                     <FaWhatsapp size={24} className="text-primary" />
                   </a>
                 </div>
@@ -126,7 +126,7 @@ export default function Contacts() {
                     type="tel"
                     id="phone"
                     className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="+7 (900) 123-45-67"
+                    placeholder="8 968 117-77-73"
                   />
                 </div>
                 
@@ -192,8 +192,8 @@ export default function Contacts() {
                 ОГРН: 1217400012840<br />
                 ИНН/КПП: 7456047921/745601001<br />
                 Фактический адрес: Московская область, г. Подольск, Проезд авиаторов 12с2<br />
-                Телефон: +7 (800) 123-45-67<br />
-                Email: info@dvigshop.ru
+                Телефон: 8 968 117-77-73<br />
+                Email: 1umudov@mail.ru
               </p>
             </div>
           </div>

@@ -61,7 +61,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-            placeholder="example@mail.ru"
+            placeholder="1umudov@mail.ru"
             required
           />
         </div>
@@ -75,7 +75,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-            placeholder="+7 (900) 123-45-67"
+            placeholder="8 968 117-77-73"
             required
           />
         </div>

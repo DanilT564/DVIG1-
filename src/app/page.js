@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative text-white py-16">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/GlaB1.JPG" 
+            src="/GlaB2.jpg" 
             alt="Background" 
             fill
             quality={100}
