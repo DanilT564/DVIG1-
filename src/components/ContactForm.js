@@ -11,6 +11,9 @@ export default function ContactForm() {
     message: '',
     agreement: false
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -22,19 +25,33 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError(null);
     
     try {
-      // Показываем индикатор загрузки или блокируем кнопку отправки
-      // (здесь можно добавить состояние isLoading и использовать его для кнопки)
+      // Готовим данные для отправки - преобразуем объект в строку
+      const dataToSend = {
+        ...formData,
+        // Добавляем дополнительную информацию
+        source: 'website_form',
+        timestamp: new Date().toISOString(),
+      };
+      
+      console.log('Отправляем данные:', dataToSend);
       
       // Отправляем данные на вебхук Make
       const response = await fetch('https://hook.us2.make.com/if80951xw0ln3qjshexm8ooyvupcq2gd', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Origin': window.location.origin
         },
-        body: JSON.stringify(formData)
+        mode: 'cors',
+        body: JSON.stringify(dataToSend)
       });
+      
+      console.log('Статус ответа:', response.status);
       
       if (response.ok) {
         // Успешная отправка
@@ -50,17 +67,26 @@ export default function ContactForm() {
           agreement: false
         });
       } else {
-        throw new Error('Ошибка при отправке формы');
+        const errorData = await response.text();
+        console.error('Ошибка ответа:', errorData);
+        throw new Error(`Ошибка при отправке формы: ${response.status} ${errorData}`);
       }
     } catch (error) {
-      console.error('Ошибка при отправке данных:', error);
-      alert('Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.');
+      console.error('Детали ошибки:', error);
+      setSubmitError('Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую по телефону.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-2xl font-bold mb-6">Напишите нам</h2>
+      {submitError && (
+        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
+          {submitError}
+        </div>
+      )}
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="block text-gray-700 mb-1">Ваше имя</label>
@@ -73,6 +99,7 @@ export default function ContactForm() {
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="Иван Иванов"
             required
+            disabled={isSubmitting}
           />
         </div>
         
@@ -87,6 +114,7 @@ export default function ContactForm() {
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="1umudov@mail.ru"
             required
+            disabled={isSubmitting}
           />
         </div>
         
@@ -101,6 +129,7 @@ export default function ContactForm() {
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="+7 968 117-77-73"
             required
+            disabled={isSubmitting}
           />
         </div>
         
@@ -113,6 +142,7 @@ export default function ContactForm() {
             onChange={handleChange}
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
             required
+            disabled={isSubmitting}
           >
             <option value="">Выберите тему</option>
             <option value="order">Вопрос по заказу</option>
@@ -133,6 +163,7 @@ export default function ContactForm() {
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="Текст вашего сообщения..."
             required
+            disabled={isSubmitting}
           ></textarea>
         </div>
         
@@ -145,6 +176,7 @@ export default function ContactForm() {
             onChange={handleChange}
             className="mr-2" 
             required
+            disabled={isSubmitting}
           />
           <label htmlFor="agreement" className="text-gray-700">
             Я согласен с <a href="/privacy" className="text-primary hover:underline">политикой конфиденциальности</a>
@@ -153,9 +185,10 @@ export default function ContactForm() {
         
         <button
           type="submit"
-          className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
+          className={`bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+          disabled={isSubmitting}
         >
-          Отправить сообщение
+          {isSubmitting ? 'Отправка...' : 'Отправить сообщение'}
         </button>
       </form>
     </div>
