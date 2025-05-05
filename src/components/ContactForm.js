@@ -75,7 +75,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-            placeholder="8 968 117-77-73"
+            placeholder="+7 968 117-77-73"
             required
           />
         </div>

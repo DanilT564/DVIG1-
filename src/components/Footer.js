@@ -16,7 +16,7 @@ export default function Footer() {
               <a href="https://vk.com/spectr" className="hover:text-secondary transition-colors">
                 <FaVk size={24} />
               </a>
-              <a href="https://wa.me/89681177773" className="hover:text-secondary transition-colors">
+              <a href="https://wa.me/+79681177773" className="hover:text-secondary transition-colors">
                 <FaWhatsapp size={24} />
               </a>
             </div>
@@ -36,7 +36,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Контакты</h3>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <FaPhone className="mr-2" /> <a href="tel:89681177773" className="hover:text-secondary transition-colors">8 968 117-77-73</a>
+                <FaPhone className="mr-2" /> <a href="tel:+79681177773" className="hover:text-secondary transition-colors">+7 968 117-77-73</a>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-2" /> <a href="mailto:1umudov@mail.ru" className="hover:text-secondary transition-colors">1umudov@mail.ru</a>

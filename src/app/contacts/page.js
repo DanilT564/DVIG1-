@@ -37,12 +37,12 @@ export default function Contacts() {
                   <div>
                     <h3 className="font-medium text-lg">Телефон</h3>
                     <p className="text-gray-600 mb-1">Отдел продаж:</p>
-                    <a href="tel:89681177773" className="text-primary text-lg font-medium hover:text-primary/80">
-                      8 968 117-77-73
+                    <a href="tel:+79681177773" className="text-primary text-lg font-medium hover:text-primary/80">
+                      +7 968 117-77-73
                     </a>
                     <p className="text-gray-600 mt-2 mb-1">Техническая поддержка:</p>
-                    <a href="tel:89681177773" className="text-primary text-lg font-medium hover:text-primary/80">
-                      8 968 117-77-73
+                    <a href="tel:+79681177773" className="text-primary text-lg font-medium hover:text-primary/80">
+                      +7 968 117-77-73
                     </a>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ export default function Contacts() {
                   <a href="https://vk.com/spectr" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
                     <FaVk size={24} className="text-primary" />
                   </a>
-                  <a href="https://wa.me/89681177773" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
+                  <a href="https://wa.me/+79681177773" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
                     <FaWhatsapp size={24} className="text-primary" />
                   </a>
                 </div>
@@ -126,7 +126,7 @@ export default function Contacts() {
                     type="tel"
                     id="phone"
                     className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="8 968 117-77-73"
+                    placeholder="+7 968 117-77-73"
                   />
                 </div>
                 
@@ -192,7 +192,7 @@ export default function Contacts() {
                 ОГРН: 1217400012840<br />
                 ИНН/КПП: 7456047921/745601001<br />
                 Фактический адрес: Московская область, г. Подольск, Проезд авиаторов 12с2<br />
-                Телефон: 8 968 117-77-73<br />
+                Телефон: +7 968 117-77-73<br />
                 Email: 1umudov@mail.ru
               </p>
             </div>

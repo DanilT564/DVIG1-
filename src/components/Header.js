@@ -19,11 +19,11 @@ export default function Header() {
           </nav>
           
           <div className="flex items-center space-x-4">
-            <a href="tel:89681177773" className="flex items-center hover:text-secondary transition-colors text-sm">
+            <a href="tel:+79681177773" className="flex items-center hover:text-secondary transition-colors text-sm">
               <FaPhone className="mr-2" />
-              <span>8 968 117-77-73</span>
+              <span>+7 968 117-77-73</span>
             </a>
-            <a href="https://wa.me/89681177773" className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors">
+            <a href="https://wa.me/+79681177773" className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors">
               <FaWhatsapp size={20} />
             </a>
             <a href="https://t.me/spectr" className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors">
