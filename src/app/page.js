@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       {/* Баннер */}
-      <section className="relative text-white py-16">
+      <section className="relative py-16">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/GlaB2.jpg" 
@@ -24,11 +24,11 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <div className="md:w-1/2 mb-8 md:mb-0 bg-white/80 p-6 rounded-lg shadow-lg">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
                 Собственная сборка двигателей ЗМЗ/УМЗ
               </h1>
-              <p className="text-xl mb-6">
+              <p className="text-xl mb-6 text-gray-800">
                 Коммерческое предложение по восстановленным двигателям для организаций с автопарком ГАЗ/УАЗ
               </p>
               <Link href="/catalog" 

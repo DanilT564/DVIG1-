@@ -85,7 +85,7 @@ export default function ProductPage({ params }) {
               <Link href={`/product/${product.id}/request`} className="bg-primary text-white px-6 py-3 rounded-md flex items-center hover:bg-primary/90 transition-colors">
                 Оставить заявку
               </Link>
-              <Link href={`tel:89001234567`} className="border border-primary text-primary px-6 py-3 rounded-md hover:bg-primary/10 transition-colors">
+              <Link href={`tel:+79681177773`} className="border border-primary text-primary px-6 py-3 rounded-md hover:bg-primary/10 transition-colors">
                 Позвонить
               </Link>
             </div>
