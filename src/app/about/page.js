@@ -102,59 +102,6 @@ export default function About() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-10">
-          <div className="p-6">
-            <h2 className="text-2xl font-bold mb-6">Наша команда</h2>
-            <p className="mb-6">
-              Работу ООО "СПЕКТР" обеспечивают профессионалы с многолетним опытом в автомобильной сфере. 
-              Наши специалисты регулярно проходят обучение и повышают свою квалификацию, 
-              чтобы предоставлять вам самую актуальную и точную информацию о двигателях.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                    <span className="text-5xl text-gray-400">АС</span>
-                  </div>
-                </div>
-                <h3 className="font-bold text-lg">Александр Смирнов</h3>
-                <p className="text-gray-600">Генеральный директор</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                    <span className="text-5xl text-gray-400">ИК</span>
-                  </div>
-                </div>
-                <h3 className="font-bold text-lg">Иван Кузнецов</h3>
-                <p className="text-gray-600">Технический специалист</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                    <span className="text-5xl text-gray-400">ЕВ</span>
-                  </div>
-                </div>
-                <h3 className="font-bold text-lg">Елена Васильева</h3>
-                <p className="text-gray-600">Менеджер по продажам</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden mb-4">
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                    <span className="text-5xl text-gray-400">СП</span>
-                  </div>
-                </div>
-                <h3 className="font-bold text-lg">Сергей Петров</h3>
-                <p className="text-gray-600">Логист</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="bg-primary text-white rounded-lg shadow-md overflow-hidden">
           <div className="p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Свяжитесь с нами</h2>
