@@ -10,7 +10,16 @@ export default function Home() {
   return (
     <div>
       {/* Баннер */}
-      <section className="relative text-white py-16 bg-primary">
+      <section className="relative text-white py-16">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/Ymyd.jpg" 
+            alt="Background" 
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
