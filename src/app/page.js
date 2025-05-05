@@ -24,7 +24,7 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0 bg-white/80 p-6 rounded-lg shadow-lg">
+            <div className="md:w-1/2 mb-8 md:mb-0">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
                 Собственная сборка двигателей ЗМЗ/УМЗ
               </h1>
