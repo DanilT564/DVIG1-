@@ -82,7 +82,7 @@ export default function Contacts() {
               <div className="mt-8">
                 <h3 className="font-medium text-lg mb-4">Мы в социальных сетях</h3>
                 <div className="flex space-x-4">
-                  <a href="https://t.me/spectr" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
+                  <a href="https://t.me/+79681177773" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
                     <FaTelegram size={24} className="text-primary" />
                   </a>
                   <a href="https://vk.com/spectr" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">

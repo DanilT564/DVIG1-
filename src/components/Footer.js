@@ -10,7 +10,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">ООО «СПЕКТР»</h3>
             <p className="mb-4">Собственная сборка двигателей ЗМЗ/УМЗ для организаций с автопарком ГАЗ/УАЗ</p>
             <div className="flex space-x-4">
-              <a href="https://t.me/spectr" className="hover:text-secondary transition-colors">
+              <a href="https://t.me/+79681177773" className="hover:text-secondary transition-colors">
                 <FaTelegram size={24} />
               </a>
               <a href="https://vk.com/spectr" className="hover:text-secondary transition-colors">

@@ -40,7 +40,7 @@ export default function Home() {
               <div className="relative h-64 md:h-80 w-full">
                 <Image 
                   src="/engine-zmz-40524.jpg" 
-                  alt="Двигатель ЗМЗ" 
+                  alt=""
                   fill
                   className="object-contain"
                 />

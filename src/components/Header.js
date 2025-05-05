@@ -26,7 +26,7 @@ export default function Header() {
             <a href="https://wa.me/+79681177773" className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors">
               <FaWhatsapp size={20} />
             </a>
-            <a href="https://t.me/spectr" className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors">
+            <a href="https://t.me/+79681177773" className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors">
               <FaTelegram size={20} />
             </a>
           </div>
