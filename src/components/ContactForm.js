@@ -18,20 +18,42 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // В реальном приложении здесь будет отправка данных на сервер
-    console.log('Отправлена форма:', formData);
-    alert('Ваше сообщение отправлено!');
-    // Сброс формы
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-      agreement: false
-    });
+    
+    try {
+      // Показываем индикатор загрузки или блокируем кнопку отправки
+      // (здесь можно добавить состояние isLoading и использовать его для кнопки)
+      
+      // Отправляем данные на вебхук Make
+      const response = await fetch('https://hook.us2.make.com/if80951xw0ln3qjshexm8ooyvupcq2gd', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        // Успешная отправка
+        alert('Ваше сообщение отправлено! Мы свяжемся с вами в ближайшее время.');
+        
+        // Сброс формы
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          agreement: false
+        });
+      } else {
+        throw new Error('Ошибка при отправке формы');
+      }
+    } catch (error) {
+      console.error('Ошибка при отправке данных:', error);
+      alert('Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.');
+    }
   };
 
   return (

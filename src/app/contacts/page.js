@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaVk, FaWhatsapp } from 'react-icons/fa';
+import ContactForm from '../../components/ContactForm';
 
 export default function Contacts() {
   return (
@@ -98,76 +99,7 @@ export default function Contacts() {
           
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-6">
-              <h2 className="text-2xl font-bold mb-6">Напишите нам</h2>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-gray-700 mb-1">Ваше имя</label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Иван Иванов"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-gray-700 mb-1">Электронная почта</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="example@mail.ru"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-gray-700 mb-1">Телефон</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="+7 968 117-77-73"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-gray-700 mb-1">Тема обращения</label>
-                  <select
-                    id="subject"
-                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                  >
-                    <option value="">Выберите тему</option>
-                    <option value="order">Вопрос по заказу</option>
-                    <option value="product">Подбор двигателя</option>
-                    <option value="delivery">Доставка</option>
-                    <option value="other">Другое</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-gray-700 mb-1">Сообщение</label>
-                  <textarea
-                    id="message"
-                    rows="5"
-                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Текст вашего сообщения..."
-                  ></textarea>
-                </div>
-                
-                <div className="flex items-center">
-                  <input type="checkbox" id="agreement" className="mr-2" />
-                  <label htmlFor="agreement" className="text-gray-700">
-                    Я согласен с <a href="#" className="text-primary hover:underline">политикой конфиденциальности</a>
-                  </label>
-                </div>
-                
-                <button
-                  type="submit"
-                  className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
-                >
-                  Отправить сообщение
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
