@@ -78,7 +78,7 @@ export default function Delivery() {
                     <FaMapMarkerAlt className="text-primary mt-1 mr-2" size={18} />
                     <p>г. Москва, ул. Примерная, д. 123, склад 456</p>
                   </div>
-                  <p className="text-gray-600">Режим работы: Пн-Пт с 9:00 до 18:00</p>
+                  <p className="text-gray-600">Режим работы: Пн-Вс с 10:00 до 21:00 по Мск</p>
                   <p className="text-gray-600">Самовывоз осуществляется только по предварительной договоренности!</p>
                 </div>
                 
