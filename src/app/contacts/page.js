@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaStore, FaWhatsapp } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaStore, FaWhatsapp, FaFilePdf } from 'react-icons/fa';
 import ContactForm from '../../components/ContactForm';
 
 export default function Contacts() {
@@ -76,6 +76,12 @@ export default function Contacts() {
                     <p className="text-gray-600 mt-2">
                       Режим работы: Пн-Вс с 10:00 до 21:00 по Мск
                     </p>
+                    <div className="mt-2 flex items-center">
+                      <FaFilePdf className="text-primary mr-2" />
+                      <a href="/commercial_offer.pdf" download className="text-primary font-medium hover:underline">
+                        Скачать коммерческое предложение
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -127,6 +133,12 @@ export default function Contacts() {
                 Телефон: +7 968 117-77-73<br />
                 Email: 1umudov@mail.ru
               </p>
+              <div className="mt-4 flex items-center">
+                <FaFilePdf className="text-primary mr-2" size={20} />
+                <a href="/commercial_offer.pdf" download className="text-primary font-medium hover:underline">
+                  Скачать коммерческое предложение в формате PDF
+                </a>
+              </div>
             </div>
           </div>
         </div>

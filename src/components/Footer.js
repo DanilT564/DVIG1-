@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaStore, FaWhatsapp } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaStore, FaWhatsapp, FaFilePdf } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -43,6 +43,9 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <FaMapMarkerAlt className="mr-2" /> <span>Московская область, г. Подольск, Проезд авиаторов 12с2</span>
+              </li>
+              <li className="flex items-center">
+                <FaFilePdf className="mr-2" /> <a href="/commercial_offer.pdf" download className="hover:text-secondary transition-colors">Коммерческое предложение</a>
               </li>
             </ul>
           </div>
