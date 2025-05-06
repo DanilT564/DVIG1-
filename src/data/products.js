@@ -23,7 +23,7 @@ export const productsData = [
       cylinders: '4, с 16 клапанами.',
       fuelSystem: 'Распределенный впрыск',
       weight: '135 кг',
-      warranty: '12 месяцев'
+      warranty: '1 месяц'
     }
   },
   {
@@ -49,7 +49,7 @@ export const productsData = [
       cylinders: '4, рядное расположение',
       fuelSystem: 'Распределенный впрыск',
       weight: '194 кг',
-      warranty: '12 месяцев'
+      warranty: '1 месяц'
     }
   },
   {
@@ -75,7 +75,7 @@ export const productsData = [
       cylinders: '4, рядное расположение',
       fuelSystem: 'Распределенный впрыск',
       weight: '192 кг',
-      warranty: '12 месяцев'
+      warranty: '1 месяц'
     }
   },
   {
@@ -100,7 +100,7 @@ export const productsData = [
       cylinders: '4, рядное расположение',
       fuelSystem: 'Карбюратор',
       weight: '180-190 кг',
-      warranty: '12 месяцев'
+      warranty: '1 месяц'
     }
   },
   {
@@ -120,7 +120,7 @@ export const productsData = [
       manufacturer: 'Заволжский моторный завод (ЗМЗ)',
       torque: '270 Нм',
       weight: '33 кг',
-      warranty: '12 месяцев'
+      warranty: '1 месяц'
     }
   },
   {
@@ -140,7 +140,7 @@ export const productsData = [
       manufacturer: 'Заволжский моторный завод (ЗМЗ)',
       torque: '270 Нм',
       weight: '33 кг',
-      warranty: '12 месяцев'
+      warranty: '1 месяц'
     }
   },
   {
@@ -167,7 +167,7 @@ export const productsData = [
       cylinders: '4, рядное расположение',
       fuelSystem: 'Распределенный впрыск',
       weight: '193 кг',
-      warranty: '24 месяца'
+      warranty: '1 месяц'
     }
   },
   {
@@ -194,7 +194,7 @@ export const productsData = [
       cylinders: '4, рядное расположение',
       fuelSystem: 'Распределенный впрыск',
       weight: '172 кг',
-      warranty: '12 месяцев'
+      warranty: '1 месяц'
     }
   },
   {
@@ -216,7 +216,7 @@ export const productsData = [
       volume: '2.4 л',
       cylinders: '4, рядное расположение',
       weight: '35 кг',
-      warranty: '12 месяцев'
+      warranty: '1 месяц'
     }
   },
   {
@@ -243,7 +243,7 @@ export const productsData = [
       cylinders: '4, рядное расположение',
       fuelSystem: 'Распределенный впрыск',
       weight: '172 кг',
-      warranty: '12 месяцев'
+      warranty: '1 месяц'
     }
   }
 ];

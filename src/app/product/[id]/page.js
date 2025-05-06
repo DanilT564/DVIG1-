@@ -70,9 +70,9 @@ export default function ProductPage({ params }) {
                 <span className="text-gray-600">Наличие:</span>
                 <span className="text-green-600 font-medium">В наличии</span>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex justify-between py-2 border-b">
                 <span className="text-gray-600">Гарантия:</span>
-                <span className="font-medium">{product.specifications?.warranty || "12 месяцев"}</span>
+                <span className="font-medium">{product.specifications?.warranty || "1 месяц"}</span>
               </div>
             </div>
             
