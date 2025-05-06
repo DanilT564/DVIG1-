@@ -78,7 +78,7 @@ export default function Contacts() {
                     </p>
                     <div className="mt-2 flex items-center">
                       <FaFilePdf className="text-primary mr-2" />
-                      <a href="/commercial_offer.pdf" download className="text-primary font-medium hover:underline">
+                      <a href="/Комерческое предложение.pdf" download className="text-primary font-medium hover:underline">
                         Скачать коммерческое предложение
                       </a>
                     </div>
@@ -135,7 +135,7 @@ export default function Contacts() {
               </p>
               <div className="mt-4 flex items-center">
                 <FaFilePdf className="text-primary mr-2" size={20} />
-                <a href="/commercial_offer.pdf" download className="text-primary font-medium hover:underline">
+                <a href="/Комерческое предложение.pdf" download className="text-primary font-medium hover:underline">
                   Скачать коммерческое предложение в формате PDF
                 </a>
               </div>

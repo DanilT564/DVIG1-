@@ -45,7 +45,7 @@ export default function Footer() {
                 <FaMapMarkerAlt className="mr-2" /> <span>Московская область, г. Подольск, Проезд авиаторов 12с2</span>
               </li>
               <li className="flex items-center">
-                <FaFilePdf className="mr-2" /> <a href="/commercial_offer.pdf" download className="hover:text-secondary transition-colors">Коммерческое предложение</a>
+                <FaFilePdf className="mr-2" /> <a href="/Комерческое предложение.pdf" download className="hover:text-secondary transition-colors">Коммерческое предложение</a>
               </li>
             </ul>
           </div>
