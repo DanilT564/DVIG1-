@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaVk, FaWhatsapp } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaStore, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -13,8 +13,8 @@ export default function Footer() {
               <a href="https://t.me/+79681177773" className="hover:text-secondary transition-colors">
                 <FaTelegram size={24} />
               </a>
-              <a href="https://vk.com/spectr" className="hover:text-secondary transition-colors">
-                <FaVk size={24} />
+              <a href="https://www.avito.ru/brands/9ab6e45e1d2a34c082af96e53d2e735f/all/zapchasti_i_aksessuary?sellerId=82f5fd1e3cb07f9c61013d91ee89eb78" className="hover:text-secondary transition-colors">
+                <FaStore size={24} />
               </a>
               <a href="https://wa.me/+79681177773" className="hover:text-secondary transition-colors">
                 <FaWhatsapp size={24} />

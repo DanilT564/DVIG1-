@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaVk, FaWhatsapp } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaStore, FaWhatsapp } from 'react-icons/fa';
 import ContactForm from '../../components/ContactForm';
 
 export default function Contacts() {
@@ -41,9 +41,9 @@ export default function Contacts() {
                     <a href="tel:+79681177773" className="text-primary text-lg font-medium hover:text-primary/80">
                       +7 968 117-77-73
                     </a>
-                    <p className="text-gray-600 mt-2 mb-1">Техническая поддержка:</p>
-                    <a href="tel:+79681177773" className="text-primary text-lg font-medium hover:text-primary/80">
-                      +7 968 117-77-73
+                    <p className="text-gray-600 mt-2 mb-1">Сотрудничество:</p>
+                    <a href="tel:+79642477776" className="text-primary text-lg font-medium hover:text-primary/80">
+                      +7 964 247-77-76
                     </a>
                   </div>
                 </div>
@@ -86,8 +86,8 @@ export default function Contacts() {
                   <a href="https://t.me/+79681177773" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
                     <FaTelegram size={24} className="text-primary" />
                   </a>
-                  <a href="https://vk.com/spectr" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
-                    <FaVk size={24} className="text-primary" />
+                  <a href="https://www.avito.ru/brands/9ab6e45e1d2a34c082af96e53d2e735f/all/zapchasti_i_aksessuary?sellerId=82f5fd1e3cb07f9c61013d91ee89eb78" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
+                    <FaStore size={24} className="text-primary" />
                   </a>
                   <a href="https://wa.me/+79681177773" className="bg-gray-100 hover:bg-gray-200 transition-colors rounded-full p-3">
                     <FaWhatsapp size={24} className="text-primary" />
@@ -109,7 +109,7 @@ export default function Contacts() {
             <h2 className="text-2xl font-bold mb-6">Как нас найти</h2>
             <div className="aspect-video w-full">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2253.0471605992723!2d37.52926527665979!3d55.43255897993389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aadffb7cbbdbd%3A0xe4dc771200a67c0f!2z0J_RgNC-0LXQt9C0INCw0LLQuNCw0YLQvtGA0L7QsiwgMTIg0YHRgtGAMiwg0J_QvtC00L7Qu9GM0YHQuiwg0JzQvtGB0LrQvtCy0YHQutCw0Y8g0L7QsdC7LiwgMTQyMTE2!5e0!3m2!1sru!2sru!4v1718099953022!5m2!1sru!2sru" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1126.5004273868538!2d37.533176762424215!3d55.431923712683015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aadff0d4e7283%3A0x3967256c389dadea!2z0J_RgNC-0LXQt9C0INCw0LLQuNCw0YLQvtGA0L7QsiwgMTLRgTIsINCf0L7QtNC-0LvRjNGB0LosINCc0L7RgdC60L7QstGB0LrQsNGPINC-0LHQuy4sIDE0MjExNg!5e0!3m2!1sru!2sru!4v1718193304797!5m2!1sru!2sru" 
                 width="100%" 
                 height="450" 
                 style={{ border: 0 }} 
