@@ -1,6 +1,3 @@
-"use client";
-
-import Image from 'next/image';
 import Link from 'next/link';
 import { FaTruck, FaShieldAlt, FaRegCreditCard } from 'react-icons/fa';
 import formatPrice from '../../../utils/formatPrice';
@@ -140,11 +137,10 @@ export default function ProductPage({ params }) {
               <div key={relatedProduct.id} className="bg-white rounded-lg shadow-md overflow-hidden">
                 <Link href={`/product/${relatedProduct.id}`}>
                   <div className="relative h-64 w-full">
-                    <Image 
+                    <img 
                       src={relatedProduct.imageUrl} 
                       alt={relatedProduct.name}
-                      fill
-                      className="object-contain"
+                      style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain'}}
                     />
                   </div>
                 </Link>
@@ -169,4 +165,8 @@ export default function ProductPage({ params }) {
       </div>
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  return productsData.map(product => ({ id: product.id.toString() }));
 } 

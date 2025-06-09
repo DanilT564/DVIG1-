@@ -1,17 +1,11 @@
-"use client";
-
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
 import ContactForm from '../../../../components/ContactForm';
-import { getProductById } from '../../../../data/products';
+import { getProductById, productsData } from '../../../../data/products';
 
-export default function ProductRequestPage() {
-  const params = useParams();
+export default function ProductRequestPage({ params }) {
   const productId = parseInt(params.id);
-  
-  // Находим продукт по id
   const product = getProductById(productId);
-  
+
   if (!product) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
@@ -23,7 +17,7 @@ export default function ProductRequestPage() {
       </div>
     );
   }
-  
+
   return (
     <div className="py-8">
       <div className="container mx-auto px-4">
@@ -59,7 +53,6 @@ export default function ProductRequestPage() {
             </li>
           </ol>
         </nav>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-4">Информация о товаре</h2>
@@ -84,10 +77,13 @@ export default function ProductRequestPage() {
               Вернуться к товару
             </Link>
           </div>
-          
           <ContactForm />
         </div>
       </div>
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  return productsData.map(product => ({ id: product.id.toString() }));
 } 

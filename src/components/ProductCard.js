@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRight, FaPlay } from 'react-icons/fa';
 import formatPrice from '../utils/formatPrice';
@@ -33,11 +32,10 @@ export default function ProductCard({ product }) {
               </div>
             </div>
           ) : (
-            <Image
+            <img
               src={imageUrl}
               alt={product.name}
-              fill
-              className="object-contain"
+              style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain'}}
             />
           )}
         </div>

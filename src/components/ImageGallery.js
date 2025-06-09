@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight, FaTimes, FaSearchPlus, FaRegImage, FaPlay } from 'react-icons/fa';
 
 export default function ImageGallery({ images, videoUrl }) {
@@ -144,13 +143,10 @@ export default function ImageGallery({ images, videoUrl }) {
                 : {}
             }
           >
-            <Image 
+            <img 
               src={mediaItems[activeIndex]} 
               alt="Product image" 
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain"
-              priority
+              style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain'}}
             />
           </div>
         )}
@@ -237,18 +233,13 @@ export default function ImageGallery({ images, videoUrl }) {
               </div>
             ) : (
               <div className="w-full h-full">
-                <Image 
+                <img 
                   src={item} 
                   alt={`Thumbnail ${index + 1}`} 
-                  fill
-                  sizes="(max-width: 768px) 25vw, 10vw"
-                  className="object-cover hover:opacity-90 transition-opacity"
+                  style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', hover: 'opacity-90 transition-opacity'}}
                   loading="eager" // Принудительная загрузка миниатюр
                 />
               </div>
-            )}
-            {activeIndex === index && (
-              <div className="absolute inset-0 border-2 border-primary rounded-lg pointer-events-none" />
             )}
           </div>
         ))}
@@ -287,12 +278,10 @@ export default function ImageGallery({ images, videoUrl }) {
                 playsInline
               />
             ) : (
-              <Image 
+              <img 
                 src={mediaItems[activeIndex]} 
                 alt={`Full size image ${activeIndex + 1}`} 
-                fill
-                sizes="100vw"
-                className="object-contain"
+                style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain'}}
               />
             )}
             
@@ -341,12 +330,10 @@ export default function ImageGallery({ images, videoUrl }) {
                     </div>
                   </div>
                 ) : (
-                  <Image 
+                  <img 
                     src={item} 
                     alt={`Thumbnail ${index + 1}`} 
-                    fill
-                    sizes="(max-width: 768px) 16px, 64px"
-                    className="object-cover"
+                    style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover'}}
                   />
                 )}
               </div>

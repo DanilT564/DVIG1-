@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import ProductCard from '../components/ProductCard';
 import { productsData } from '../data/products';
@@ -12,14 +11,10 @@ export default function Home() {
       {/* Баннер */}
       <section className="relative py-16">
         <div className="absolute inset-0 z-0">
-          <Image 
+          <img 
             src="/GlaB3.jpg" 
             alt="Background" 
-            fill
-            quality={100}
-            sizes="100vw"
-            className="object-cover"
-            priority
+            style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0}}
           />
         </div>
         <div className="container mx-auto px-4 relative z-10">
@@ -38,11 +33,10 @@ export default function Home() {
             </div>
             <div className="md:w-1/2">
               <div className="relative h-64 md:h-80 w-full">
-                <Image 
+                <img 
                   src="/engine-zmz-40524.jpg" 
                   alt=""
-                  fill
-                  className="object-contain"
+                  style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain'}}
                 />
               </div>
             </div>
@@ -104,11 +98,10 @@ export default function Home() {
             <Link href="/catalog/zmz" className="group">
               <div className="bg-gray-100 rounded-lg overflow-hidden shadow-md transition-all group-hover:shadow-lg">
                 <div className="relative h-48">
-                  <Image 
+                  <img 
                     src="/category-zmz.jpg" 
                     alt="Двигатели ЗМЗ" 
-                    fill
-                    className="object-cover"
+                    style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover'}}
                   />
                 </div>
                 <div className="p-4">
@@ -121,11 +114,10 @@ export default function Home() {
             <Link href="/catalog/umz" className="group">
               <div className="bg-gray-100 rounded-lg overflow-hidden shadow-md transition-all group-hover:shadow-lg">
                 <div className="relative h-48">
-                  <Image 
+                  <img 
                     src="/category-umz.jpg" 
                     alt="Двигатели УМЗ" 
-                    fill
-                    className="object-cover"
+                    style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover'}}
                   />
                 </div>
                 <div className="p-4">
@@ -138,11 +130,10 @@ export default function Home() {
             <Link href="/catalog/parts" className="group">
               <div className="bg-gray-100 rounded-lg overflow-hidden shadow-md transition-all group-hover:shadow-lg">
                 <div className="relative h-48">
-                  <Image 
+                  <img 
                     src="/category-parts.jpg" 
                     alt="Запчасти для двигателей" 
-                    fill
-                    className="object-cover"
+                    style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover'}}
                   />
                 </div>
                 <div className="p-4">

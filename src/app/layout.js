@@ -3,8 +3,8 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export const metadata = {
-  title: 'DVIG Shop',
-  description: 'DVIG - Интернет-магазин двигателей',
+  title: 'Двигателя на Газель',
+  description: 'Двигателя на Газель - Интернет-магазин двигателей',
 }
 
 export default function RootLayout({ children }) {

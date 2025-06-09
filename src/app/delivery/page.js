@@ -71,12 +71,12 @@ export default function Delivery() {
               
               <div>
                 <h3 className="text-xl font-semibold mb-4">Самовывоз</h3>
-                <p className="mb-4">Вы можете самостоятельно забрать двигатель с нашего склада в Москве:</p>
+                <p className="mb-4">Вы можете самостоятельно забрать двигатель с нашего склада в Подольске:</p>
                 
                 <div className="bg-gray-100 rounded-lg p-4 mb-6">
                   <div className="flex items-start mb-3">
                     <FaMapMarkerAlt className="text-primary mt-1 mr-2" size={18} />
-                    <p>г. Москва, ул. Примерная, д. 123, склад 456</p>
+                    <p>Московская область, г. Подольск, Проезд авиаторов 12с2</p>
                   </div>
                   <p className="text-gray-600">Режим работы: Пн-Вс с 10:00 до 21:00 по Мск</p>
                   <p className="text-gray-600">Самовывоз осуществляется только по предварительной договоренности!</p>
